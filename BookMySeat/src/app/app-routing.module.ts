@@ -1,3 +1,11 @@
+import { VehicleFormComponent } from './vehicle/vehicle-form/vehicle-form.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { TransportenterpriseFormComponent } from './transportenterprise/transportenterprise-form/transportenterprise-form.component';
+import { TransportenterpriseComponent } from './transportenterprise/transportenterprise.component';
+import { TransittimeComponent } from './transittime/transittime.component';
+import { StationFormComponent } from './station/station-form/station-form.component';
+import { StationComponent } from './station/station.component';
+import { SeatreservationFormComponent } from './seatreservation/seatreservation-form/seatreservation-form.component';
 import { SeatFormComponent } from './seat/seat-form/seat-form.component';
 import { SeatComponent } from './seat/seat.component';
 import { LineFormComponent } from './line/line-form/line-form.component';
@@ -11,11 +19,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {
-    path: 'user', component: UserComponent, children: [
-      { path: 'form', component: UserFormComponent }
-    ]
-  },
   {
     path: 'collectivity', component: CollectivityComponent, children: [
       { path: 'form', component: CollectivityFormComponent }
@@ -31,7 +34,35 @@ const routes: Routes = [
       { path: 'form', component: SeatFormComponent }
     ]
   },
-  { path: '', redirectTo: '/collectivity', pathMatch: 'full' }
+  {
+    path: 'reservation', component: SeatreservationFormComponent, children: [
+      { path: 'form', component: SeatreservationFormComponent }
+    ]
+  },
+  {
+    path: 'station', component: StationComponent, children: [
+      { path: 'form', component: StationFormComponent }
+    ]
+  },
+  {
+    path: 'transitTime', component: TransittimeComponent
+  },
+  {
+    path: 'transportEnterprise', component: TransportenterpriseComponent, children: [
+      { path: 'form', component: TransportenterpriseFormComponent }
+    ]
+  },
+  {
+    path: 'user', component: UserComponent, children: [
+      { path: 'form', component: UserFormComponent }
+    ]
+  },
+  {
+    path: 'vehicle', component: VehicleComponent, children: [
+      { path: 'form', component: VehicleFormComponent }
+    ]
+  },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({
