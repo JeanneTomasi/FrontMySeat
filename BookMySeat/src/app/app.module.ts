@@ -27,6 +27,7 @@ import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './login/login.component';
+import { CollectivityListComponent } from './collectivity/collectivity-list/collectivity-list.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { LoginComponent } from './login/login.component';
     VehicleComponent,
     VehicleFormComponent,
     VehicleListComponent,
-    LoginComponent
+    LoginComponent,
+    CollectivityListComponent
   ],
   imports: [
     BrowserModule,
