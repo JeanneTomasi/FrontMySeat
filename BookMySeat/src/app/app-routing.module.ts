@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { VehicleFormComponent } from './vehicle/vehicle-form/vehicle-form.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { TransportenterpriseFormComponent } from './transportenterprise/transportenterprise-form/transportenterprise-form.component';
@@ -61,6 +62,9 @@ const routes: Routes = [
     path: 'vehicle', component: VehicleComponent, children: [
       { path: 'form', component: VehicleFormComponent }
     ]
+  },
+  {
+    path: 'login', component: LoginComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
