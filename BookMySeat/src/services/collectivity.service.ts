@@ -1,38 +1,63 @@
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollectivityService {
+  body: any;
 
-  URL = 'http://localhost:8080/apiCollectivity';
-  collectivities: any[] = [];
-  editMode = false;
-  collectivity = new Object();
-  admin: any;
+  endpoint = 'http://localhost:8080/apiCollectivity';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
-  add(collectivity: any) {
-    return this.http.post(this.URL + '/add', collectivity, { observe: 'response' });
+  private extractData(res: Response) {
+    this.body = res;
+    return this.body || {};
   }
 
-  update(collectivity: any) {
-    return this.http.put(this.URL + '/update', collectivity, { observe: 'response' });
+  addAnimal(animal): Observable<any> {
+    console.log(animal);
+    return this.http.post<any>(this.endpoint + 'animal', JSON.stringify(animal), this.httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap((animal) => console.log(`added animal w/ id=${animal.id}`)),
+      catchError(this.handleError<any>('addAnimal'))
+    );
   }
 
-  findAll() {
-    return this.http.get<any[]>(this.URL + '/collectivities').pipe(map(value => this.collectivities = value));
+  updateAnimal(id, animal): Observable<any> {
+    return this.http.put(this.endpoint + 'animal/' + id, JSON.stringify(animal), this.httpOptions).pipe(
+      tap(_ => console.log(`updated animal id=${id}`)),
+      catchError(this.handleError<any>('updateAnimal'))
+    );
   }
 
-  delete(id: any) {
-    return this.http.delete(this.URL + '/delete/' + id);
+  getAllAnimaux(): Observable<any> {
+    return this.http.get(this.endpoint + 'animaux').pipe(
+      map(this.extractData));
   }
 
-  getOne(id: any) {
-    return this.http.get<any>(this.URL + '/get/' + id);
+  getAnimaux(id): Observable<any> {
+    return this.http.get(this.endpoint + 'animaux/' + id).pipe(
+      map(this.extractData));
+  }
+
+
+
+
+
+  deleteAnimal(id): Observable<any> {
+    return this.http.delete<any>(this.endpoint + 'animal/' + id, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted animal id=${id}`)),
+      catchError(this.handleError<any>('deleteAnimal'))
+    );
   }
 
 }
