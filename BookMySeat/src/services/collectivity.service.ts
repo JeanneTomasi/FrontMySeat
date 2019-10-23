@@ -1,3 +1,4 @@
+import { Collectivity } from './../models/collectivity';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -23,40 +24,33 @@ export class CollectivityService {
     return this.body || {};
   }
 
-  addAnimal(animal): Observable<any> {
-    console.log(animal);
-    return this.http.post<any>(this.endpoint + 'animal', JSON.stringify(animal), this.httpOptions).pipe(
+  add(collectivity): Observable<Collectivity> {
+    console.log(collectivity);
+    return this.http.post<Collectivity>(this.endpoint + 'add', JSON.stringify(collectivity), this.httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
-      tap((animal) => console.log(`added animal w/ id=${animal.id}`)),
-      catchError(this.handleError<any>('addAnimal'))
+      tap((collectivity) => console.log(`added collectivity w/ id=${collectivity.id_collectivity}`))
     );
   }
 
-  updateAnimal(id, animal): Observable<any> {
-    return this.http.put(this.endpoint + 'animal/' + id, JSON.stringify(animal), this.httpOptions).pipe(
-      tap(_ => console.log(`updated animal id=${id}`)),
-      catchError(this.handleError<any>('updateAnimal'))
+  update(id, collectivity): Observable<Collectivity> {
+    return this.http.put<Collectivity>(this.endpoint + '/edit/' + id, JSON.stringify(collectivity), this.httpOptions).pipe(
+      tap(_ => console.log(`updated collectivity id=${id}`))
     );
   }
 
-  getAllAnimaux(): Observable<any> {
-    return this.http.get(this.endpoint + 'animaux').pipe(
+  findAll(): Observable<Collectivity[]> {
+    return this.http.get(this.endpoint + '/collectivities').pipe(
       map(this.extractData));
   }
 
-  getAnimaux(id): Observable<any> {
-    return this.http.get(this.endpoint + 'animaux/' + id).pipe(
+  getById(id): Observable<Collectivity> {
+    return this.http.get(this.endpoint + '/get/' + id).pipe(
       map(this.extractData));
   }
 
-
-
-
-
-  deleteAnimal(id): Observable<any> {
-    return this.http.delete<any>(this.endpoint + 'animal/' + id, this.httpOptions).pipe(
-      tap(_ => console.log(`deleted animal id=${id}`)),
-      catchError(this.handleError<any>('deleteAnimal'))
+  delete(id): Observable<Collectivity> {
+    return this.http.delete<Collectivity>(this.endpoint + '/delete/' + id, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted animal id=${id}`))
     );
   }
 

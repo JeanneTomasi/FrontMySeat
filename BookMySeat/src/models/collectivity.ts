@@ -1,5 +1,5 @@
 import { TransportEntrepriseService } from './../services/transportenterprise.service';
-export class Collectivity {
+export class Collectivity implements Object {
 
     // tslint:disable-next-line:variable-name
     id_collectivity: number;
