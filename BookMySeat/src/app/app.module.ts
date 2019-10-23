@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -23,6 +24,9 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { VehicleFormComponent } from './vehicle/vehicle-form/vehicle-form.component';
 import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
