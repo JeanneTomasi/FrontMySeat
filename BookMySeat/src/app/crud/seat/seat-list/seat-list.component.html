@@ -1,1 +1,17 @@
-<p>seat-list works!</p>
+<h2>Line List</h2>
+
+<div>
+  <button (click)="add()">
+    Add
+  </button>
+</div>
+
+<ul class="line">
+  <li *ngFor="let l of lines; let i=index;">
+      <span class="badge">{{l.id_line}}</span> {{l.name}} {{l.localisation}}
+    <button class="delete" title="Delete"
+      (click)="delete(l.id_line)">x</button>
+      <button class="update" title="Update"
+      (click)="edit(l.id_line)">modifier</button>
+  </li>
+</ul>
