@@ -25,7 +25,7 @@ export class CollectivityFormComponent implements OnInit {
 
   add() {
     this.service.add(this.collectivity).subscribe((result) => {
-      this.router.navigate(['/list']);
+      this.router.navigate(['/collectivity/list']);
     });
   }
 }

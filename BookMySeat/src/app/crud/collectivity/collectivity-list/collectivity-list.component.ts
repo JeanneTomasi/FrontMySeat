@@ -24,8 +24,18 @@ export class CollectivityListComponent implements OnInit {
     this.service.findAll().subscribe((value: Collectivity[]) => this.collectivities = value);
   }
 
+  add() {
+    this.router.navigate(['/collectivity/form']);
+  }
+
   delete(id) {
-    this.service.delete(id);
+    this.service.delete(id)
+      .subscribe(res => {
+        this.findAll();
+      }, (err) => {
+        console.log(err);
+      }
+      );
   }
 
   edit(id) {
