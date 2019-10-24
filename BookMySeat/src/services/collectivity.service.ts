@@ -9,6 +9,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 })
 export class CollectivityService {
   body: any;
+  editMode: boolean;
 
   endpoint = 'http://localhost:8080/apiCollectivity';
   httpOptions = {

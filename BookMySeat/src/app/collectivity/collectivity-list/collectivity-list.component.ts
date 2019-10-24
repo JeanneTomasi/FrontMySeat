@@ -1,3 +1,4 @@
+import { Collectivity } from './../../../models/collectivity';
 import { CollectivityService } from './../../../services/collectivity.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,8 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CollectivityListComponent implements OnInit {
 
-
-  collectivities: any[] = [];
+  collectivities: Collectivity[] = [];
 
   constructor(private service: CollectivityService, private router: Router) { }
 
@@ -19,12 +19,11 @@ export class CollectivityListComponent implements OnInit {
   }
 
   findAll() {
-    this.service.findAll().subscribe((value: any[]) => this.collectivities = value);
+    this.service.findAll().subscribe((value: Collectivity[]) => this.collectivities = value);
   }
 
-  delete(id, index) {
-    this.service.delete(id).subscribe(response =>
-      this.service.collectivities.splice(index, 1));
+  delete(id) {
+    this.service.delete(id);
   }
 
   edit(id) {

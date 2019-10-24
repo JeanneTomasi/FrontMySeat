@@ -1,3 +1,4 @@
+import { CollectivityListComponent } from './collectivity/collectivity-list/collectivity-list.component';
 import { LoginComponent } from './login/login.component';
 import { VehicleFormComponent } from './vehicle/vehicle-form/vehicle-form.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
@@ -22,7 +23,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'collectivity', component: CollectivityComponent, children: [
-      { path: 'form', component: CollectivityFormComponent }
+      { path: 'form', component: CollectivityFormComponent },
+      { path: 'list', component: CollectivityListComponent },
+      { path: 'edit', component: CollectivityFormComponent }
     ]
   },
   {
