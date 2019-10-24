@@ -1,3 +1,4 @@
+import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { LoginComponent } from './login/login.component';
 import { VehicleFormComponent } from './crud/vehicle/vehicle-form/vehicle-form.component';
@@ -28,7 +29,7 @@ const routes: Routes = [
     path: 'collectivity', component: CollectivityComponent, children: [
       { path: 'form', component: CollectivityFormComponent },
       { path: 'list', component: CollectivityListComponent },
-      { path: 'edit/:id', component: CollectivityFormComponent }
+      { path: 'edit/:id', component: CollectivityEditComponent }
     ]
   },
   {

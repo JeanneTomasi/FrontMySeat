@@ -1,4 +1,6 @@
+import { CollectivityService } from './../../../services/collectivity.service';
 import { Component, OnInit } from '@angular/core';
+import { Collectivity } from 'src/models/collectivity';
 
 @Component({
   selector: 'app-collectivity',

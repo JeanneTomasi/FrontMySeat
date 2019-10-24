@@ -1,3 +1,4 @@
+import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
 import { VehicleService } from './../services/vehicle.service';
 import { UserService } from './../services/user.service';
 import { TransitTimeService } from './../services/transittime.service';
@@ -56,7 +57,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from '../material-module';
 import { TransportEntrepriseService } from 'src/services/transportenterprise.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,7 +95,8 @@ import { TransportEntrepriseService } from 'src/services/transportenterprise.ser
     TraficActuComponent,
     ReserverComponent,
     ValidationComponent,
-    MonProfilComponent
+    MonProfilComponent,
+    CollectivityEditComponent
   ],
   imports: [
     BrowserModule,

@@ -34,9 +34,7 @@ export class CollectivityService {
   }
 
   update(collectivity): Observable<Collectivity> {
-    return this.http.put<Collectivity>(this.endpoint + '/update', JSON.stringify(collectivity), this.httpOptions).pipe(
-      tap(_ => console.log(`updated collectivity`))
-    );
+    return this.http.put<Collectivity>(this.endpoint + '/update', JSON.stringify(collectivity), this.httpOptions);
   }
 
   findAll(): Observable<Collectivity[]> {
