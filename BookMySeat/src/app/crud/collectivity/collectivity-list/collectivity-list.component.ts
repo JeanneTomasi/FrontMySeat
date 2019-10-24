@@ -29,5 +29,20 @@ export class CollectivityListComponent implements OnInit {
   edit(id) {
     this.router.navigate(['/collectivity/edit', id]);
     this.service.editMode = true;
+
+
   }
+
+  // animal: any;
+
+  // constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { }
+
+  // ngOnInit() {
+  //   // tslint:disable-next-line:no-string-literal
+  //   this.rest.getAnimaux(this.route.snapshot.params['id']).subscribe((data: {}) => {
+  //     console.log(data);
+  //     this.animal = data;
+  //   });
+  // }
+
 }
