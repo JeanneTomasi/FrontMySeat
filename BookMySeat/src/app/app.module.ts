@@ -1,4 +1,3 @@
-import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
 import { VehicleService } from './../services/vehicle.service';
 import { UserService } from './../services/user.service';
 import { TransitTimeService } from './../services/transittime.service';
@@ -56,6 +55,7 @@ import { MonProfilComponent } from './mon-profil/mon-profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from '../material-module';
 import { TransportEntrepriseService } from 'src/services/transportenterprise.service';
+import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
 
 @NgModule({
   declarations: [
