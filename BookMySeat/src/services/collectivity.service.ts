@@ -50,7 +50,7 @@ export class CollectivityService {
 
   delete(id): Observable<Collectivity> {
     return this.http.delete<Collectivity>(this.endpoint + '/delete/' + id, this.httpOptions).pipe(
-      tap(_ => console.log(`deleted animal id=${id}`))
+      tap(_ => console.log(`deleted collectivity id=${id}`))
     );
   }
 
