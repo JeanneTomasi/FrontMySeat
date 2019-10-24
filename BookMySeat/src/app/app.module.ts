@@ -28,6 +28,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './login/login.component';
 import { CollectivityListComponent } from './collectivity/collectivity-list/collectivity-list.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ActualiteComponent } from './accueil/actualite/actualite.component';
+import { TraficComponent } from './accueil/trafic/trafic.component';
+import { AuthentificationComponent } from './accueil/authentification/authentification.component';
+import { AccueilButtonComponent } from './accueil-button/accueil-button.component';
+import { FormulaireComponent } from './login/formulaire/formulaire.component';
+import { CitationComponent } from './citation/citation.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { MesLignesComponent } from './mes-lignes/mes-lignes.component';
+import { TraficActuComponent } from './trafic-actu/trafic-actu.component';
+import { ReserverComponent } from './reserver/reserver.component';
+import { ValidationComponent } from './reserver/validation/validation.component';
+import { MonProfilComponent } from './mon-profil/mon-profil.component';
 
 
 @NgModule({
@@ -54,7 +68,21 @@ import { CollectivityListComponent } from './collectivity/collectivity-list/coll
     VehicleFormComponent,
     VehicleListComponent,
     LoginComponent,
-    CollectivityListComponent
+    CollectivityListComponent,
+    AccueilComponent,
+    ActualiteComponent,
+    TraficComponent,
+    AuthentificationComponent,
+    AccueilButtonComponent,
+    FormulaireComponent,
+    CitationComponent,
+    InscriptionComponent,
+    MenuBarComponent,
+    MesLignesComponent,
+    TraficActuComponent,
+    ReserverComponent,
+    ValidationComponent,
+    MonProfilComponent
   ],
   imports: [
     BrowserModule,
