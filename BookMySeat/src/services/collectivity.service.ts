@@ -9,7 +9,7 @@ import { map, tap } from 'rxjs/operators';
 })
 export class CollectivityService {
   body: any;
-  editMode: boolean;
+  editMode = false;
 
   endpoint = 'http://localhost:8080/apiCollectivity';
   httpOptions = {
@@ -33,10 +33,8 @@ export class CollectivityService {
     );
   }
 
-  update(id, collectivity): Observable<Collectivity> {
-    return this.http.put<Collectivity>(this.endpoint + '/edit/' + id, JSON.stringify(collectivity), this.httpOptions).pipe(
-      tap(_ => console.log(`updated collectivity id=${id}`))
-    );
+  update(collectivity): Observable<Collectivity> {
+    return this.http.put<Collectivity>(this.endpoint + '/update', JSON.stringify(collectivity), this.httpOptions);
   }
 
   findAll(): Observable<Collectivity[]> {

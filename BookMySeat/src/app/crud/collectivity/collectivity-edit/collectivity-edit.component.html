@@ -1,0 +1,15 @@
+<div>
+    <h2>Collectivity Edit</h2>
+    <div>
+        <label>Id :
+            <input [(ngModel)]="collectivityData.id_collectivity" placeholder="Numéro d'identification" />
+        </label><br>
+        <label>Collectivité :
+            <input [(ngModel)]="collectivityData.name" placeholder="Nom de la collectivité" />
+        </label><br>
+        <label>Zone d'opération :
+            <input [(ngModel)]="collectivityData.operation_area" placeholder="Zone d'opération" />
+        </label><br>
+    </div>
+    <button (click)="update()">Save</button>
+</div>
