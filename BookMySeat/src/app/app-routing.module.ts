@@ -1,3 +1,5 @@
+import { LineEditComponent } from './crud/line/line-edit/line-edit.component';
+import { LineListComponent } from './crud/line/line-list/line-list.component';
 import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ActualiteComponent } from './accueil/actualite/actualite.component';
@@ -37,7 +39,9 @@ const routes: Routes = [
   },
   {
     path: 'line', component: LineComponent, children: [
-      { path: 'form', component: LineFormComponent }
+      { path: 'form', component: LineFormComponent },
+      { path: 'list', component: LineListComponent },
+      { path: 'edit/:id', component: LineEditComponent }
     ]
   },
   {

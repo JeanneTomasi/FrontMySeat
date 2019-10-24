@@ -1,1 +1,15 @@
-<p>line-form works!</p>
+<div>
+    <h2>Line Add</h2>
+    <div>
+        <label>Id :
+            <input [(ngModel)]="lineData.id_line" placeholder="Numéro d'identification" />
+        </label><br>
+        <label>Nom :
+            <input [(ngModel)]="lineData.name" placeholder="Nom de la ligne" />
+        </label><br>
+        <label>Localisation :
+            <input [(ngModel)]="lineData.localisation" placeholder="Localisation" />
+        </label><br>
+    </div>
+    <button (click)="add()">Save</button>
+</div>

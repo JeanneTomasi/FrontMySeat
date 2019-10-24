@@ -4,7 +4,7 @@ export class Line {
     id_line: number;
     name: string;
     localisation: string;
-    vehicle: Vehicle[];
+    // vehicle: Vehicle[];
 
     constructor() { }
 }
