@@ -1,7 +1,8 @@
-import { Collectivity } from './../../../models/collectivity';
-import { CollectivityService } from './../../../services/collectivity.service';
+import { CollectivityService } from './../../../../services/collectivity.service';
+
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Collectivity } from 'src/models/collectivity';
 
 
 @Component({

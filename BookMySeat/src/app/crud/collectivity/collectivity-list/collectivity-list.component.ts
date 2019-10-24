@@ -1,7 +1,8 @@
-import { Collectivity } from './../../../models/collectivity';
-import { CollectivityService } from './../../../services/collectivity.service';
+import { CollectivityService } from './../../../../services/collectivity.service';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Collectivity } from 'src/models/collectivity';
 
 @Component({
   selector: 'app-collectivity-list',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class CollectivityListComponent implements OnInit {
 
   collectivities: Collectivity[] = [];
+  collectivity: Collectivity;
 
   constructor(private service: CollectivityService, private router: Router) { }
 
@@ -33,16 +35,5 @@ export class CollectivityListComponent implements OnInit {
 
   }
 
-  // animal: any;
-
-  // constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { }
-
-  // ngOnInit() {
-  //   // tslint:disable-next-line:no-string-literal
-  //   this.rest.getAnimaux(this.route.snapshot.params['id']).subscribe((data: {}) => {
-  //     console.log(data);
-  //     this.animal = data;
-  //   });
-  // }
 
 }
