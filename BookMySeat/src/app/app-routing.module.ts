@@ -1,5 +1,6 @@
 import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ActualiteComponent } from './accueil/actualite/actualite.component';
 import { LoginComponent } from './login/login.component';
 import { VehicleFormComponent } from './crud/vehicle/vehicle-form/vehicle-form.component';
 import { VehicleComponent } from './crud/vehicle/vehicle.component';
@@ -22,6 +23,8 @@ import { CollectivityComponent } from './crud/collectivity/collectivity.componen
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthentificationComponent } from './accueil/authentification/authentification.component';
+import { TraficComponent } from './accueil/trafic/trafic.component';
 
 
 const routes: Routes = [
@@ -74,7 +77,11 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'accueil', component: AccueilComponent
+    path: 'accueil', component: AccueilComponent, children: [
+      { path: 'actualite', component: ActualiteComponent },
+      { path: 'authentification', component: AuthentificationComponent },
+      { path: 'trafic', component: TraficComponent }
+    ]
   },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }
 ];
