@@ -7,7 +7,7 @@ export class Collectivity implements Object {
     // tslint:disable-next-line:variable-name
     operation_area: string;
     // tslint:disable-next-line:variable-name
-    transport_entreprise: TransportEntrepriseService;
+    // transport_entreprise: TransportEntrepriseService;
 
     constructor() { }
 }

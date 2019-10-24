@@ -42,6 +42,7 @@ import { TraficActuComponent } from './trafic-actu/trafic-actu.component';
 import { ReserverComponent } from './reserver/reserver.component';
 import { ValidationComponent } from './reserver/validation/validation.component';
 import { MonProfilComponent } from './mon-profil/mon-profil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -90,7 +91,8 @@ import { MonProfilComponent } from './mon-profil/mon-profil.component';
     Ng2SearchPipeModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
