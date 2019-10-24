@@ -45,6 +45,7 @@ import { ReserverComponent } from './reserver/reserver.component';
 import { ValidationComponent } from './reserver/validation/validation.component';
 import { MonProfilComponent } from './mon-profil/mon-profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from '../material-module';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
     FormsModule,
