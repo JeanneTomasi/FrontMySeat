@@ -1,30 +1,13 @@
-<div class="row">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">Formulaire Collectivité</div>
-            <div class="card-body">
-                <form [formGroup]="form">
-                    <label>Id : </label>
-                    <input type="text" class="form-control" formControlName="id_collectivity"
-                        placeholder="Entrez un entier unique." />
-                    <p *ngIf="form.get('id_collectivity').invalid && form.get('id_collectivity').touched" class="text-danger">Ce champ est requis
-                    </p>
-                    <br>
-                    <label>Nom : </label>
-                    <input type="text" class="form-control" formControlName="name" placeholder="Soyez inventif." />
-                    <p *ngIf="form.get('name').invalid && form.get('name').touched" class="text-danger">Ce champ est
-                        requis
-                    </p>
-                    <br>
-                    <label>Zone d'activité : </label>
-                    <input type="text" class="form-control" formControlName="operation_area" placeholder="Soyez généreux." />
-                    <p *ngIf="form.get('operation_area').invalid && form.get('operation_area').touched" class="text-danger">Ce champ est
-                        requis
-                    </p>
-                    <button type="submit" *ngIf="!editMode" [disabled]="!form.valid" class="btn btn-success" (click)="add()">Ajouter</button>
-                    <button type="submit" *ngIf="editMode" [disabled]="!form.valid" class="btn btn-success" (click)="update(form.get('id'))">Update</button>
-                </form>
-            </div>
-        </div>
+<div>
+    <h2>Collectivity Add</h2>
+    <div>
+        
+        <label>Collectivité :
+            <input [(ngModel)]="collectivityData.name" placeholder="Nom de la collectivité" />
+        </label><br>
+        <label>Zone d'opération :
+            <input [(ngModel)]="collectivityData.operation_area" placeholder="Zone d'opération" />
+        </label><br>
     </div>
+    <button (click)="add()">Save</button>
 </div>
