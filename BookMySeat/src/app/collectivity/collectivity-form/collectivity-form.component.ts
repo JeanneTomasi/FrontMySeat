@@ -18,7 +18,7 @@ export class CollectivityFormComponent implements OnInit {
   form: FormGroup;
   collectivity: Collectivity;
   id: number;
-  editMode: any;
+  editMode: false;
 
   constructor(private service: CollectivityService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -28,12 +28,13 @@ export class CollectivityFormComponent implements OnInit {
       name: new FormControl(null, Validators.required),
       operation_area: new FormControl(null, Validators.required),
     });
+    this.collectivity = this.form;
   }
 
 
   add() {
-    this.service.add(this.collectivityData).subscribe((result) => {
-      this.router.navigate(['/animal-details/']);
+    this.service.add(this.form).subscribe((result) => {
+      this.router.navigate(['/collectivity/list']);
     }, (err) => {
       console.log(err);
     });
