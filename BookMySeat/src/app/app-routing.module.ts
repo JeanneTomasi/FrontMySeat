@@ -1,21 +1,23 @@
-import { CollectivityListComponent } from './collectivity/collectivity-list/collectivity-list.component';
 import { LoginComponent } from './login/login.component';
-import { VehicleFormComponent } from './vehicle/vehicle-form/vehicle-form.component';
-import { VehicleComponent } from './vehicle/vehicle.component';
-import { TransportenterpriseFormComponent } from './transportenterprise/transportenterprise-form/transportenterprise-form.component';
-import { TransportenterpriseComponent } from './transportenterprise/transportenterprise.component';
-import { TransittimeComponent } from './transittime/transittime.component';
-import { StationFormComponent } from './station/station-form/station-form.component';
-import { StationComponent } from './station/station.component';
-import { SeatreservationFormComponent } from './seatreservation/seatreservation-form/seatreservation-form.component';
-import { SeatFormComponent } from './seat/seat-form/seat-form.component';
-import { SeatComponent } from './seat/seat.component';
-import { LineFormComponent } from './line/line-form/line-form.component';
-import { LineComponent } from './line/line.component';
-import { CollectivityFormComponent } from './collectivity/collectivity-form/collectivity-form.component';
-import { CollectivityComponent } from './collectivity/collectivity.component';
-import { UserFormComponent } from './user/user-form/user-form.component';
-import { UserComponent } from './user/user.component';
+import { VehicleFormComponent } from './crud/vehicle/vehicle-form/vehicle-form.component';
+import { VehicleComponent } from './crud/vehicle/vehicle.component';
+import { UserFormComponent } from './crud/user/user-form/user-form.component';
+import { UserComponent } from './crud/user/user.component';
+import { TransportenterpriseFormComponent } from './crud/transportenterprise/transportenterprise-form/transportenterprise-form.component';
+import { TransportenterpriseComponent } from './crud/transportenterprise/transportenterprise.component';
+import { TransittimeComponent } from './crud/transittime/transittime.component';
+import { StationFormComponent } from './crud/station/station-form/station-form.component';
+import { SeatreservationComponent } from './crud/seatreservation/seatreservation.component';
+import { StationComponent } from './crud/station/station.component';
+import { SeatreservationFormComponent } from './crud/seatreservation/seatreservation-form/seatreservation-form.component';
+import { SeatFormComponent } from './crud/seat/seat-form/seat-form.component';
+import { SeatComponent } from './crud/seat/seat.component';
+import { LineFormComponent } from './crud/line/line-form/line-form.component';
+import { LineComponent } from './crud/line/line.component';
+import { CollectivityListComponent } from './crud/collectivity/collectivity-list/collectivity-list.component';
+import { CollectivityFormComponent } from './crud/collectivity/collectivity-form/collectivity-form.component';
+import { CollectivityComponent } from './crud/collectivity/collectivity.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -39,7 +41,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'reservation', component: SeatreservationFormComponent, children: [
+    path: 'reservation', component: SeatreservationComponent, children: [
       { path: 'form', component: SeatreservationFormComponent }
     ]
   },
