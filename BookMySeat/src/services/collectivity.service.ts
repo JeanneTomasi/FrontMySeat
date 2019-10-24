@@ -27,7 +27,7 @@ export class CollectivityService {
 
   add(collectivity): Observable<Collectivity> {
     console.log(collectivity);
-    return this.http.post<Collectivity>(this.endpoint + 'add', JSON.stringify(collectivity), this.httpOptions).pipe(
+    return this.http.post<Collectivity>(this.endpoint + '/add', JSON.stringify(collectivity), this.httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
       tap((collectivity) => console.log(`added collectivity w/ id=${collectivity.id_collectivity}`))
     );
