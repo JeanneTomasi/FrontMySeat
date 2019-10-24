@@ -1,8 +1,7 @@
 import { Collectivity } from './../../../models/collectivity';
 import { CollectivityService } from './../../../services/collectivity.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -13,30 +12,19 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 export class CollectivityFormComponent implements OnInit {
 
-  @Input() collectivityData = { nom: '', pattes: 0, coolitudeSurVingt: 0 };
+  @Input() collectivityData = { id_collectivity: 0, name: '', operation_area: '' };
 
-  form: FormGroup;
   collectivity: Collectivity;
-  id: number;
-  editMode: false;
 
   constructor(private service: CollectivityService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.form = new FormGroup({
-      id_collectivity: new FormControl(null, Validators.required),
-      name: new FormControl(null, Validators.required),
-      operation_area: new FormControl(null, Validators.required),
-    });
-    this.collectivity = this.form;
+    this.collectivity = this.collectivityData;
   }
 
-
   add() {
-    this.service.add(this.form).subscribe((result) => {
-      this.router.navigate(['/collectivity/list']);
-    }, (err) => {
-      console.log(err);
+    this.service.add(this.collectivity).subscribe((result) => {
+      this.router.navigate(['/list']);
     });
   }
 }
