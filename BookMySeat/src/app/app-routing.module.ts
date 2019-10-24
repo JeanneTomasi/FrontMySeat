@@ -1,3 +1,4 @@
+import { AccueilComponent } from './accueil/accueil.component';
 import { LoginComponent } from './login/login.component';
 import { VehicleFormComponent } from './crud/vehicle/vehicle-form/vehicle-form.component';
 import { VehicleComponent } from './crud/vehicle/vehicle.component';
@@ -71,7 +72,10 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  {
+    path: 'accueil', component: AccueilComponent
+  },
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' }
 ];
 
 @NgModule({
