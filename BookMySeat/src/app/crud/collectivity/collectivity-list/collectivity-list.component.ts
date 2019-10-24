@@ -41,8 +41,6 @@ export class CollectivityListComponent implements OnInit {
   edit(id) {
     this.router.navigate(['/collectivity/edit', id]);
     this.service.editMode = true;
-
-
   }
 
 
