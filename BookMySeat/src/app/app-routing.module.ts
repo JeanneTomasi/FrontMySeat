@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { AccueilComponent } from './accueil/accueil.component';
-import { CollectivityListComponent } from './collectivity/collectivity-list/collectivity-list.component';
-=======
->>>>>>> 3e08dcf198838a618c7ea97521748ccd7824baf9
 import { LoginComponent } from './login/login.component';
 import { VehicleFormComponent } from './crud/vehicle/vehicle-form/vehicle-form.component';
 import { VehicleComponent } from './crud/vehicle/vehicle.component';
