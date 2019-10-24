@@ -1,38 +1,55 @@
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { SeatReservation } from './../models/seatreservation';
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class SeatReservationService {
-
-  URL = 'http://localhost:8080/apiSeatReservation';
-  reservations: any[] = [];
+  body: any;
   editMode = false;
-  reservation = new Object();
-  admin: any;
+
+  endpoint = 'http://localhost:8080/apiSeatReservation';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
-  add(reservation: any) {
-    return this.http.post(this.URL + '/add', reservation, { observe: 'response' });
+  private extractData(res: Response) {
+    this.body = res;
+    return this.body || {};
   }
 
-  update(reservation: any) {
-    return this.http.put(this.URL + '/update', reservation, { observe: 'response' });
+  add(seatReservation): Observable<SeatReservation> {
+    console.log(seatReservation);
+    return this.http.post<SeatReservation>(this.endpoint + '/add', JSON.stringify(seatReservation), this.httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap((seatReservation) => console.log(`added seatReservation w/ id=${seatReservation.id_seat_reservation}`))
+    );
   }
 
-  findAll() {
-    return this.http.get<any[]>(this.URL + '/reservations').pipe(map(value => this.reservations = value));
+  update(seatReservation): Observable<SeatReservation> {
+    return this.http.put<SeatReservation>(this.endpoint + '/update', JSON.stringify(seatReservation), this.httpOptions);
   }
 
-  delete(id: any) {
-    return this.http.delete(this.URL + '/delete/' + id);
+  findAll(): Observable<SeatReservation[]> {
+    return this.http.get(this.endpoint + '/reservations').pipe(
+      map(this.extractData));
   }
 
-  getOne(id: any) {
-    return this.http.get<any>(this.URL + '/get/' + id);
+  getById(id): Observable<SeatReservation> {
+    return this.http.get(this.endpoint + '/get/' + id).pipe(
+      map(this.extractData));
+  }
+
+  delete(id): Observable<SeatReservation> {
+    return this.http.delete<SeatReservation>(this.endpoint + '/delete/' + id, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted seatReservation id=${id}`))
+    );
   }
 
 }

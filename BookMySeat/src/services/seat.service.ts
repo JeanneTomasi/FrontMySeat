@@ -1,38 +1,55 @@
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { Seat } from 'src/models/seat';
 @Injectable({
   providedIn: 'root'
 })
 export class SeatService {
-
-  URL = 'http://localhost:8080/apiSeat';
-  seats: any[] = [];
+  body: any;
   editMode = false;
-  seat = new Object();
-  admin: any;
+
+  endpoint = 'http://localhost:8080/apiSeat';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
-  add(seat: any) {
-    return this.http.post(this.URL + '/add', seat, { observe: 'response' });
+  private extractData(res: Response) {
+    this.body = res;
+    return this.body || {};
   }
 
-  update(seat: any) {
-    return this.http.put(this.URL + '/update', seat, { observe: 'response' });
+  add(seat): Observable<Seat> {
+    console.log(seat);
+    return this.http.post<Seat>(this.endpoint + '/add', JSON.stringify(seat), this.httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap((seat) => console.log(`added seat w/ id=${seat.id_seat}`))
+    );
   }
 
-  findAll() {
-    return this.http.get<any[]>(this.URL + '/seats').pipe(map(value => this.seats = value));
+  update(seat): Observable<Seat> {
+    return this.http.put<Seat>(this.endpoint + '/update', JSON.stringify(seat), this.httpOptions);
   }
 
-  delete(id: any) {
-    return this.http.delete(this.URL + '/delete/' + id);
+  findAll(): Observable<Seat[]> {
+    return this.http.get(this.endpoint + '/seats').pipe(
+      map(this.extractData));
   }
 
-  getOne(id: any) {
-    return this.http.get<any>(this.URL + '/get/' + id);
+  getById(id): Observable<Seat> {
+    return this.http.get(this.endpoint + '/get/' + id).pipe(
+      map(this.extractData));
+  }
+
+  delete(id): Observable<Seat> {
+    return this.http.delete<Seat>(this.endpoint + '/delete/' + id, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted seat id=${id}`))
+    );
   }
 
 }

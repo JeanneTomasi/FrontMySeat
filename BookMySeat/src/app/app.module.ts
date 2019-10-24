@@ -1,3 +1,4 @@
+import { TransportEnterpriseService } from './../services/transportenterprise.service';
 import { VehicleService } from './../services/vehicle.service';
 import { UserService } from './../services/user.service';
 import { TransitTimeService } from './../services/transittime.service';
@@ -54,8 +55,21 @@ import { ValidationComponent } from './reserver/validation/validation.component'
 import { MonProfilComponent } from './mon-profil/mon-profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from '../material-module';
-import { TransportEntrepriseService } from 'src/services/transportenterprise.service';
 import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
+import { LineListComponent } from './crud/line/line-list/line-list.component';
+import { LineEditComponent } from './crud/line/line-edit/line-edit.component';
+import { SeatListComponent } from './crud/seat/seat-list/seat-list.component';
+import { SeatEditComponent } from './crud/seat/seat-edit/seat-edit.component';
+import { SeatreservationListComponent } from './crud/seatreservation/seatreservation-list/seatreservation-list.component';
+import { SeatreservationEditComponent } from './crud/seatreservation/seatreservation-edit/seatreservation-edit.component';
+import { StationEditComponent } from './crud/station/station-edit/station-edit.component';
+import { TransittimeFormComponent } from './crud/transittime/transittime-form/transittime-form.component';
+import { TransittimeEditComponent } from './crud/transittime/transittime-edit/transittime-edit.component';
+import { TransittimeListComponent } from './crud/transittime/transittime-list/transittime-list.component';
+import { TransportenterpriseListComponent } from './crud/transportenterprise/transportenterprise-list/transportenterprise-list.component';
+import { TransportenterpriseEditComponent } from './crud/transportenterprise/transportenterprise-edit/transportenterprise-edit.component';
+import { UserEditComponent } from './crud/user/user-edit/user-edit.component';
+import { VehicleEditComponent } from './crud/vehicle/vehicle-edit/vehicle-edit.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +110,21 @@ import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit
     ReserverComponent,
     ValidationComponent,
     MonProfilComponent,
-    CollectivityEditComponent
+    CollectivityEditComponent,
+    LineListComponent,
+    LineEditComponent,
+    SeatListComponent,
+    SeatEditComponent,
+    SeatreservationListComponent,
+    SeatreservationEditComponent,
+    StationEditComponent,
+    TransittimeFormComponent,
+    TransittimeEditComponent,
+    TransittimeListComponent,
+    TransportenterpriseListComponent,
+    TransportenterpriseEditComponent,
+    UserEditComponent,
+    VehicleEditComponent
   ],
   imports: [
     BrowserModule,
@@ -116,7 +144,7 @@ import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit
     SeatReservationService,
     StationService,
     TransitTimeService,
-    TransportEntrepriseService,
+    TransportEnterpriseService,
     UserService,
     VehicleService
   ],

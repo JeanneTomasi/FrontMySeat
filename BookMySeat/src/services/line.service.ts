@@ -1,38 +1,55 @@
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { Line } from './../models/line';
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class LineService {
-
-  URL = 'http://localhost:8080/apiLine';
-  lines: any[] = [];
+  body: any;
   editMode = false;
-  line = new Object();
-  admin: any;
+
+  endpoint = 'http://localhost:8080/apiLine';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
-  add(line: any) {
-    return this.http.post(this.URL + '/add', line, { observe: 'response' });
+  private extractData(res: Response) {
+    this.body = res;
+    return this.body || {};
   }
 
-  update(line: any) {
-    return this.http.put(this.URL + '/update', line, { observe: 'response' });
+  add(line): Observable<Line> {
+    console.log(line);
+    return this.http.post<Line>(this.endpoint + '/add', JSON.stringify(line), this.httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap((line) => console.log(`added line w/ id=${line.id_line}`))
+    );
   }
 
-  findAll() {
-    return this.http.get<any[]>(this.URL + '/lines').pipe(map(value => this.lines = value));
+  update(line): Observable<Line> {
+    return this.http.put<Line>(this.endpoint + '/update', JSON.stringify(line), this.httpOptions);
   }
 
-  delete(id: any) {
-    return this.http.delete(this.URL + '/delete/' + id);
+  findAll(): Observable<Line[]> {
+    return this.http.get(this.endpoint + '/lines').pipe(
+      map(this.extractData));
   }
 
-  getOne(id: any) {
-    return this.http.get<any>(this.URL + '/get/' + id);
+  getById(id): Observable<Line> {
+    return this.http.get(this.endpoint + '/get/' + id).pipe(
+      map(this.extractData));
+  }
+
+  delete(id): Observable<Line> {
+    return this.http.delete<Line>(this.endpoint + '/delete/' + id, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted line id=${id}`))
+    );
   }
 
 }
