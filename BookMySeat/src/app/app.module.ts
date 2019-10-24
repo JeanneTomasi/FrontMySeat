@@ -1,3 +1,11 @@
+import { VehicleService } from './../services/vehicle.service';
+import { UserService } from './../services/user.service';
+import { TransitTimeService } from './../services/transittime.service';
+import { StationService } from './../services/station.service';
+import { SeatReservationService } from './../services/seatreservation.service';
+import { SeatService } from './../services/seat.service';
+import { LineService } from './../services/line.service';
+import { CollectivityService } from './../services/collectivity.service';
 import { CollectivityListComponent } from './crud/collectivity/collectivity-list/collectivity-list.component';
 import { VehicleListComponent } from './crud/vehicle/vehicle-list/vehicle-list.component';
 import { VehicleFormComponent } from './crud/vehicle/vehicle-form/vehicle-form.component';
@@ -46,6 +54,7 @@ import { ValidationComponent } from './reserver/validation/validation.component'
 import { MonProfilComponent } from './mon-profil/mon-profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from '../material-module';
+import { TransportEntrepriseService } from 'src/services/transportenterprise.service';
 
 
 @NgModule({
@@ -99,7 +108,17 @@ import {MaterialModule} from '../material-module';
     BrowserAnimationsModule,
     MatSliderModule,
   ],
-  providers: [],
+  providers: [
+    CollectivityService,
+    LineService,
+    SeatService,
+    SeatReservationService,
+    StationService,
+    TransitTimeService,
+    TransportEntrepriseService,
+    UserService,
+    VehicleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
