@@ -2,7 +2,7 @@
     <h2>Seat Add</h2>
     <div>
         <label>Id :
-            <input [(ngModel)]="seatData.id_line" placeholder="Numéro d'identification" />
+            <input [(ngModel)]="seatData.id_seat" placeholder="Numéro d'identification" />
         </label><br>
         <label>Placement :
             <input [(ngModel)]="seatData.placement" placeholder="Placement" />
@@ -13,9 +13,9 @@
         <label>isReserved :
             <input type="checkbox" [(ngModel)]="seatData.isReserved" value="true">
         </label><br>
-        <label>Véhicule :
+        <label>Vehicle :
             <select>
-                <option ng-repeat="v in vehicles" ng-click="chargeVehicle(v.id_vehicle)">{{v.immatriculation}}</option>
+                <option *ngFor="let v of vehicles" ng-click="chargeVehicle(v.id_vehicle)">{{v.immatriculation}}</option>
             </select></label><br>
     </div>
     <button (click)="add()">Save</button>
