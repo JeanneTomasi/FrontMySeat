@@ -1,4 +1,4 @@
-<h2>Line List</h2>
+<h2>Seat List</h2>
 
 <div>
   <button (click)="add()">
@@ -6,12 +6,17 @@
   </button>
 </div>
 
-<ul class="line">
-  <li *ngFor="let l of lines; let i=index;">
-      <span class="badge">{{l.id_line}}</span> {{l.name}} {{l.localisation}}
-    <button class="delete" title="Delete"
-      (click)="delete(l.id_line)">x</button>
-      <button class="update" title="Update"
-      (click)="edit(l.id_line)">modifier</button>
-  </li>
-</ul>
+<table class="seat" style="border: solid 1px">
+  <tr *ngFor="let s of seats; let i=index;">
+    <td><span class="badge">{{s.id_seat}}</span></td>
+    <td> {{s.placement}}</td>
+    <td><span *ngIf="s.reservable">réservable</span>
+      <span *ngIf="!s.reservable">non réservable</span></td>
+    <td><span *ngIf="s.isReserved">réservé</span>
+      <span *ngIf="!s.isReserved">non réservé</span></td>
+    <td><button class="delete" title="Delete"
+      (click)="delete(s.id_seat)">x</button></td>
+    <td><button class="update" title="Update"
+      (click)="edit(s.id_seat)">modifier</button></td>
+  </tr>
+</table>

@@ -15,17 +15,22 @@ export class SeatFormComponent implements OnInit {
 
   seat: Seat;
   vehicles: Vehicle[];
+  vehicle: Vehicle;
 
   // tslint:disable-next-line:max-line-length
   constructor(private service: SeatService, private serviceVehicle: VehicleService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.seat = this.seatData;
     this.serviceVehicle.findAll().subscribe((value: Vehicle[]) => this.vehicles = value);
   }
 
+  chargeVehicle(id) {
+    this.serviceVehicle.getById(id).subscribe((value: Vehicle) => this.vehicle = value);
+  }
 
   add() {
+    this.seatData.vehicle = this.vehicle;
+    this.seat = this.seatData;
     this.service.add(this.seat).subscribe((result) => {
       this.router.navigate(['/seat/list']);
     });
