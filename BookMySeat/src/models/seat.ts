@@ -8,10 +8,10 @@ export class Seat {
     placement: string;
     reservable: boolean;
     isReserved: boolean;
-    user: User;
+    // user: User;
     vehicle: Vehicle;
     // tslint:disable-next-line:variable-name
-    seat_reservation: SeatReservation;
+    // seat_reservation: SeatReservation;
 
     constructor() { }
 }

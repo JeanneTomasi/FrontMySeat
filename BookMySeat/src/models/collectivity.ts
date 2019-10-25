@@ -1,4 +1,4 @@
-import { TransportEntrepriseService } from './../services/transportenterprise.service';
+import { TransportEnterpriseService } from './../services/transportenterprise.service';
 export class Collectivity implements Object {
 
     // tslint:disable-next-line:variable-name
@@ -7,7 +7,7 @@ export class Collectivity implements Object {
     // tslint:disable-next-line:variable-name
     operation_area: string;
     // tslint:disable-next-line:variable-name
-    // transport_entreprise: TransportEntrepriseService;
+    // transport_entreprise: TransportEnterpriseService;
 
     constructor() { }
 }
