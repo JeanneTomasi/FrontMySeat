@@ -13,10 +13,15 @@
         <label>isReserved :
             <input type="checkbox" [(ngModel)]="seatData.isReserved" value="true">
         </label><br>
-        <label>Vehicle :
+        <!-- <label>Vehicle :
             <select>
-                <option *ngFor="let v of vehicles" ng-click="chargeVehicle(v.id_vehicle)">{{v.immatriculation}}</option>
+                <option *ngFor="let v of vehicles" (click)="chargeVehicle(v.id_vehicle)">{{v.immatriculation}}</option>
+            </select></label><br> -->
+        <label>Vehicle :
+            <select [(ngModel)]="seatData.vehicle">
+                <option *ngFor="let v of vehicles" value="{{v}}">{{v.immatriculation}}</option>
             </select></label><br>
+
     </div>
     <button (click)="add()">Save</button>
 </div>

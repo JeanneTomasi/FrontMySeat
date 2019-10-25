@@ -1,1 +1,22 @@
-<p>seatreservation-list works!</p>
+<h2>SeatReservation List</h2>
+
+<div>
+  <button (click)="add()">
+    Add
+  </button>
+</div>
+
+<table class="reservation" style="border: solid 1px">
+  <tr *ngFor="let r of reservations; let i=index;">
+    <td><span class="badge">{{r.id_seat_reservation}}</span></td>
+    <td> {{r.starting_time}}</td>
+    <td>{{r.release_time}}</td>
+    <td>{{r.user.username}}</td>
+    <td>{{r.seat.vehicule.immatriculation}}</td>
+    <td>{{r.seat.placement}}</td>
+    <td><button class="delete" title="Delete"
+      (click)="delete(r.id_seat_reservation)">x</button></td>
+    <td><button class="update" title="Update"
+      (click)="edit(r.id_seat_reservation)">modifier</button></td>
+  </tr>
+</table>

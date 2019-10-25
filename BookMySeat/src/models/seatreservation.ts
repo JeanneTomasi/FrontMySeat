@@ -8,7 +8,7 @@ export class SeatReservation {
     starting_time: string;
     // tslint:disable-next-line:variable-name
     release_time: string;
-    // user: User;
+    user: User;
     seat: Seat;
 
     constructor() { }

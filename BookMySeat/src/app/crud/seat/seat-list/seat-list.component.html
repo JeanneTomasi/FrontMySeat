@@ -14,6 +14,7 @@
       <span *ngIf="!s.reservable">non réservable</span></td>
     <td><span *ngIf="s.isReserved">réservé</span>
       <span *ngIf="!s.isReserved">non réservé</span></td>
+      <td>{{s.vehicle.immatriculation}}</td>
     <td><button class="delete" title="Delete"
       (click)="delete(s.id_seat)">x</button></td>
     <td><button class="update" title="Update"

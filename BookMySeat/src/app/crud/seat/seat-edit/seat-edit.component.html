@@ -13,9 +13,13 @@
         <label>isReserved :
             <input type="checkbox" [(ngModel)]="seatData.isReserved" value="true">
         </label><br>
-        <label>Vehicule :
+        <!-- <label>Vehicule :
             <select [(ngModel)]="seatData.vehicle">
                 <option  *ngFor="let v of vehicles" value="">{{v}}</option>
+            </select></label><br> -->
+        <label>Vehicle :
+            <select [(ngModel)]="seatData.vehicle">
+                <option *ngFor="let v of vehicles" value="{{v}}">{{v.immatriculation}}</option>
             </select></label><br>
     </div>
     <button (click)="update()">Save</button>
