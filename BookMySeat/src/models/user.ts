@@ -15,8 +15,8 @@ export class User {
     email: string;
     handicap: Handicap;
     username: string;
-    seat: Seat;
+    // seat: Seat;
     // tslint:disable-next-line:variable-name
-    seat_reservation: SeatReservation;
+    // seat_reservation: SeatReservation;
     constructor() { }
 }

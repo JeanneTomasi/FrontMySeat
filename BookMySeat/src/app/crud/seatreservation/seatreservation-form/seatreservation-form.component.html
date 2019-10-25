@@ -12,11 +12,11 @@
         </label><br>
         <label>Utilisateur :
             <select [(ngModel)]="reservationData.user">
-                <option *ngFor="let u of users" value="{{u}}">{{u.username}}</option>
+                <option *ngFor="let u of users" value="{{u.id_user}}">{{u.username}}</option>
             </select></label><br>
         <label>Seat :
             <select [(ngModel)]="reservationData.seat">
-                <option *ngFor="let s of seats" value="{{s}}">{{s.placement}}</option>
+                <option *ngFor="let s of seats" value="{{s.id_seat}}">{{s.placement}}</option>
             </select></label><br>
     </div>
     <button (click)="add()">Save</button>
