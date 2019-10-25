@@ -124,7 +124,7 @@ import { VehicleEditComponent } from './crud/vehicle/vehicle-edit/vehicle-edit.c
     TransportenterpriseListComponent,
     TransportenterpriseEditComponent,
     UserEditComponent,
-    VehicleEditComponent
+    VehicleEditComponent,
   ],
   imports: [
     BrowserModule,
