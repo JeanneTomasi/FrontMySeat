@@ -39,18 +39,18 @@ export class SeatreservationEditComponent implements OnInit {
 
   }
 
-  chargeSeat(id) {
-    this.service2.getById(id).subscribe((value: Seat) => this.seat = value);
-  }
+  // chargeSeat(id) {
+  //   this.service2.getById(id).subscribe((value: Seat) => this.seat = value);
+  // }
 
-  chargeUser(id) {
-    this.service3.getById(id).subscribe((value: User) => this.user = value);
-  }
+  // chargeUser(id) {
+  //   this.service3.getById(id).subscribe((value: User) => this.user = value);
+  // }
 
   update() {
     this.reservation = this.reservationData;
-    this.reservationData.seat = this.seat;
-    this.reservationData.user = this.user;
+    // this.reservationData.seat = this.seat;
+    // this.reservationData.user = this.user;
     this.service.update(this.reservation).subscribe((result) => {
       this.router.navigate(['/reservation/list']);
     });

@@ -24,12 +24,12 @@ export class SeatFormComponent implements OnInit {
     this.serviceVehicle.findAll().subscribe((value: Vehicle[]) => this.vehicles = value);
   }
 
-  chargeVehicle(id) {
-    this.serviceVehicle.getById(id).subscribe((value: Vehicle) => this.vehicle = value);
-  }
+  // chargeVehicle(id) {
+  //   this.serviceVehicle.getById(id).subscribe((value: Vehicle) => this.vehicle = value);
+  // }
 
   add() {
-    this.seatData.vehicle = this.vehicle;
+    // this.seatData.vehicle = this.vehicle;
     this.seat = this.seatData;
     this.service.add(this.seat).subscribe((result) => {
       this.router.navigate(['/seat/list']);
