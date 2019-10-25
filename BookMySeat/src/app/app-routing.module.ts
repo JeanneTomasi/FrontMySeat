@@ -1,3 +1,6 @@
+import { ReserverComponent } from './reserver/reserver.component';
+import { MonProfilComponent } from './mon-profil/mon-profil.component';
+import { MesLignesComponent } from './mes-lignes/mes-lignes.component';
 import { LineEditComponent } from './crud/line/line-edit/line-edit.component';
 import { LineListComponent } from './crud/line/line-list/line-list.component';
 import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
@@ -87,6 +90,9 @@ const routes: Routes = [
       { path: 'trafic', component: TraficComponent }
     ]
   },
+  { path: 'mes-lignes', component: MesLignesComponent },
+  { path: 'mon-profil', component: MonProfilComponent },
+  { path: 'reserver', component: ReserverComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }
 ];
 
