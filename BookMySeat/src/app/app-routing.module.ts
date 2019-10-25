@@ -1,3 +1,5 @@
+import { InscriptionComponent } from './inscription/inscription.component';
+import { FormulaireComponent } from './login/formulaire/formulaire.component';
 import { LineEditComponent } from './crud/line/line-edit/line-edit.component';
 import { LineListComponent } from './crud/line/line-list/line-list.component';
 import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
@@ -78,7 +80,9 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'login', component: LoginComponent
+    path: 'inscription', component: InscriptionComponent, children: [
+      { path: 'formulaire', component: FormulaireComponent }
+    ]
   },
   {
     path: 'accueil', component: AccueilComponent, children: [

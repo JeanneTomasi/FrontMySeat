@@ -1,1 +1,69 @@
-<p>formulaire works!</p>
+<h2>Nouveau venu? </h2>        
+
+<form [formGroup]="form">
+            
+            <fieldset>
+
+                <legend>Racontes nous tout!</legend>
+                <table>
+                   
+                              <tr><td> <label for="name">Nom* :</label></td> 
+                                <td><input type="text" class="form-control" formControlName="name" /></td> 
+                               
+
+                           
+                                <td><label for="firstName">Prenom* :</label></td> 
+                                <td><input type="text" class="form-control" formControlName="firstName" /></td> 
+                               
+
+
+                                <td><label for="dateDeNaissance">Date de Naissance* :</label></td> 
+                                <td><input type="datetime" class="form-control" formControlName="dateDeNaissance" /></td> </tr><br/>
+                           
+                         
+                            <tr><td> <label for="age">Email* :</label></td> 
+                                <td><input type="email" class="form-control" formControlName="email" /></td> 
+                            
+                           
+
+                       
+                                <td><label for="dateDeNaissance">Username* :</label></td> 
+                                <td><input type="text" class="form-control" formControlName="username" /></td> </tr>
+                        </table>
+
+                            <fieldset>
+
+                                <legend> Adresse : </legend>
+                                <table>
+
+                                <tr><td> <label for="num_street">N° rue :</label></td> 
+                                    <td><input type="text"/></td> 
+
+                        
+                                    <td><label for="street">Rue :</label></td> 
+                                    <td><input type="text" class="form-control" formControlName="street" /></td> 
+
+                      
+                                    <td><label for="city">Ville :</label></td> 
+                                    <td><input type="text" class="form-control" formControlName="city" /></td> </tr><br/>
+
+
+                            <tr><td><label for="postalCode">Code Postal :</label></td> 
+                                <td><input type="text" class="form-control" formControlName="postalCode" /></td> 
+
+                    
+                                <td><label for="country">Pays :</label></td> 
+                                <td><input type="text" class="form-control" formControlName="country" /></td> </tr>
+
+                            </table>
+                    </fieldset>
+                </fieldset>
+                </form>
+
+                            <input type="submit" value="Nous rejoindre"  />
+          
+
+ 
+
+
+
