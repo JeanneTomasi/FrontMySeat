@@ -1,3 +1,4 @@
+import { FormulaireComponent } from './inscription/formulaire/formulaire.component';
 import { TransportEnterpriseService } from './../services/transportenterprise.service';
 import { VehicleService } from './../services/vehicle.service';
 import { UserService } from './../services/user.service';
@@ -44,7 +45,6 @@ import { ActualiteComponent } from './accueil/actualite/actualite.component';
 import { TraficComponent } from './accueil/trafic/trafic.component';
 import { AuthentificationComponent } from './accueil/authentification/authentification.component';
 import { AccueilButtonComponent } from './accueil-button/accueil-button.component';
-import { FormulaireComponent } from './login/formulaire/formulaire.component';
 import { CitationComponent } from './citation/citation.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
