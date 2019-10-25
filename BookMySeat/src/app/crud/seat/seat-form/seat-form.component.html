@@ -1,1 +1,27 @@
-<p>seat-form works!</p>
+<div>
+    <h2>Seat Add</h2>
+    <div>
+        <label>Id :
+            <input [(ngModel)]="seatData.id_seat" placeholder="Numéro d'identification" />
+        </label><br>
+        <label>Placement :
+            <input [(ngModel)]="seatData.placement" placeholder="Placement" />
+        </label><br>
+        <label>Réservable :
+            <input type="checkbox" [(ngModel)]="seatData.reservable" value="true">
+        </label><br>
+        <label>isReserved :
+            <input type="checkbox" [(ngModel)]="seatData.isReserved" value="true">
+        </label><br>
+        <!-- <label>Vehicle :
+            <select>
+                <option *ngFor="let v of vehicles" (click)="chargeVehicle(v.id_vehicle)">{{v.immatriculation}}</option>
+            </select></label><br> -->
+        <label>Vehicle :
+            <select [(ngModel)]="seatData.vehicle">
+                <option *ngFor="let v of vehicles" value="{{v}}">{{v.immatriculation}}</option>
+            </select></label><br>
+
+    </div>
+    <button (click)="add()">Save</button>
+</div>

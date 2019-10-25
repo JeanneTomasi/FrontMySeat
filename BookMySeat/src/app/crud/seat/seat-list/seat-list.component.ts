@@ -1,5 +1,7 @@
+import { SeatService } from './../../../../services/seat.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Seat } from 'src/models/seat';
 @Component({
   selector: 'app-seat-list',
   templateUrl: './seat-list.component.html',
@@ -7,37 +9,37 @@ import { Router } from '@angular/router';
 })
 export class SeatListComponent implements OnInit {
 
-  // lines: Line[] = [];
-  // line: Line;
+  seats: Seat[] = [];
+  seat: Seat;
 
-  // constructor(private service: LineService, private router: Router) { }
+  constructor(private service: SeatService, private router: Router) { }
 
   ngOnInit() {
-  //   this.findAll();
+    this.findAll();
   }
 
-  // findAll() {
-  //   this.service.findAll().subscribe((value: Line[]) => this.lines = value);
-  // }
+  findAll() {
+    this.service.findAll().subscribe((value: Seat[]) => this.seats = value);
+  }
 
-  // add() {
-  //   this.router.navigate(['/line/form']);
-  // }
+  add() {
+    this.router.navigate(['/seat/form']);
+  }
 
-  // delete(id) {
-  //   this.service.delete(id)
-  //     .subscribe(res => {
-  //       this.findAll();
-  //     }, (err) => {
-  //       console.log(err);
-  //     }
-  //     );
-  // }
+  delete(id) {
+    this.service.delete(id)
+      .subscribe(res => {
+        this.findAll();
+      }, (err) => {
+        console.log(err);
+      }
+      );
+  }
 
-  // edit(id) {
-  //   this.router.navigate(['/line/edit', id]);
-  //   this.service.editMode = true;
-  // }
+  edit(id) {
+    this.router.navigate(['/seat/edit', id]);
+    // this.service.editMode = true;
+  }
 
 
 }
