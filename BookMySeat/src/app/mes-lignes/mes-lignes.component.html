@@ -1,4 +1,8 @@
 <app-accueil-button></app-accueil-button>
+
+
+<app-menu-bar></app-menu-bar>
+
 <h1 id="title">Mes lignes</h1>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
@@ -22,7 +26,7 @@
         <th mat-header-cell *matHeaderCellDef>Reserver</th>
         <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent" (click)="element.reserver()"
                 *ngIf="element.placesLeft>0">Reserver</button>
-            <button mat-raised-button color="accent" *ngIf="element.placesLeft===0">Complet</button></td>
+            <button mat-raised-button disabled *ngIf="element.placesLeft===0">Complet</button></td>
     </ng-container>
 
 

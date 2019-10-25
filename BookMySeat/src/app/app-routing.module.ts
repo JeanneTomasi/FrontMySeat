@@ -91,6 +91,7 @@ const routes: Routes = [
     ]
   },
   { path: 'mes-lignes', component: MesLignesComponent },
+  { path: 'trafic', component: TraficComponent },
   { path: 'mon-profil', component: MonProfilComponent },
   { path: 'reserver', component: ReserverComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }
