@@ -1,1 +1,14 @@
-<p>menu-bar works!</p>
+<mat-sidenav-container class="menu-bar">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+        (closed)="events.push('close!')">
+        <table>
+            <tr><td><button mat-flat-button (click)="goMesLignes()">Mes lignes</button></td></tr>
+            <tr><td><button mat-flat-button (click)="goLeTrafic()">Le trafic</button></td></tr>
+            <tr><td><button mat-flat-button (click)="goMonProfil()">Mon Profil</button></td></tr>
+        </table>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <p><button mat-fab color="primary" (click)="sidenav.toggle()">Ouvrir</button></p>
+    </mat-sidenav-content>
+</mat-sidenav-container>

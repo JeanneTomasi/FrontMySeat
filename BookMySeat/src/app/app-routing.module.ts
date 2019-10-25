@@ -13,6 +13,9 @@ import { SeatreservationEditComponent } from './crud/seatreservation/seatreserva
 import { SeatreservationListComponent } from './crud/seatreservation/seatreservation-list/seatreservation-list.component';
 import { SeatEditComponent } from './crud/seat/seat-edit/seat-edit.component';
 import { SeatListComponent } from './crud/seat/seat-list/seat-list.component';
+import { ReserverComponent } from './reserver/reserver.component';
+import { MonProfilComponent } from './mon-profil/mon-profil.component';
+import { MesLignesComponent } from './mes-lignes/mes-lignes.component';
 import { LineEditComponent } from './crud/line/line-edit/line-edit.component';
 import { LineListComponent } from './crud/line/line-list/line-list.component';
 import { CollectivityEditComponent } from './crud/collectivity/collectivity-edit/collectivity-edit.component';
@@ -118,6 +121,10 @@ const routes: Routes = [
       { path: 'trafic', component: TraficComponent }
     ]
   },
+  { path: 'mes-lignes', component: MesLignesComponent },
+  { path: 'trafic', component: TraficComponent },
+  { path: 'mon-profil', component: MonProfilComponent },
+  { path: 'reserver', component: ReserverComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }
 ];
 
