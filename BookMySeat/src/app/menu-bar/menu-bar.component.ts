@@ -13,13 +13,20 @@ export class MenuBarComponent implements OnInit {
   ngOnInit() {
   }
 
-  goMesLigne(){
+  goMesLignes(){
     this.router.navigate(['/mes-lignes'])
   }
   goLeTrafic(){
-    this.router.navigate(['/trafic'])
+    this.router.navigate(['/trafic-actu'])
   }
   goMonProfil(){
     this.router.navigate(['/mon-profil'])
+  }
+  goReserver(){
+    this.router.navigate(['/reserver'])
+  }
+
+  returnToAccueil() {
+    this.router.navigate(['/accueil']);
   }
 }

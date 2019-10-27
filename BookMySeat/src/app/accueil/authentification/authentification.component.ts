@@ -17,4 +17,8 @@ export class AuthentificationComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  goToMesLignes() {
+    this.router.navigate(['/mes-lignes']);
+  }
+
 }

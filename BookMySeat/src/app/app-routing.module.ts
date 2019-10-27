@@ -48,6 +48,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthentificationComponent } from './accueil/authentification/authentification.component';
 import { TraficComponent } from './accueil/trafic/trafic.component';
+import { TraficActuComponent } from './trafic-actu/trafic-actu.component';
 
 
 const routes: Routes = [
@@ -135,6 +136,7 @@ const routes: Routes = [
   { path: 'trafic', component: TraficComponent },
   { path: 'mon-profil', component: MonProfilComponent },
   { path: 'reserver', component: ReserverComponent },
+  { path: 'trafic-actu', component: TraficActuComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }
 ];
 
