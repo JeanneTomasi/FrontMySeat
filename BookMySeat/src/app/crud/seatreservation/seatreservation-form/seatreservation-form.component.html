@@ -11,7 +11,7 @@
             <input [(ngModel)]="reservationData.release_time" placeholder="Heure de fin" />
         </label><br>
         <label>Utilisateur :
-            <select [(ngModel)]="reservationData.user">
+            <select [(ngModel)]="userData.id_user">
                 <option *ngFor="let u of users" value="{{u.id_user}}">{{u.username}}</option>
             </select></label><br>
         <label>Seat :
