@@ -1,4 +1,5 @@
 <body id="LoginForm">
+    <div class="youpi">
     <div class="container">
     <div class="login-form">
     <div class="main-div">
@@ -20,14 +21,14 @@
                 <input type="password" class="form-control" formControlName="password" placeholder="Mot de Passe">
     
             </div>
-            <div class="forgot">
-            <a href="reset.html">Mot de passe oublié ?</a>
-    </div>
-            <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+            <br>
+  
+            <button type="submit"mat-raised-button color="warn" (click)="login()">Login</button>            
     {{message}}
         </form>
         </div>
-    </div></div>
+        <button  mat-raised-button color="primary"  (click)="redirect()">Nouveau sur le site ?</button>
+    </div></div></div>
     
     
     </body>

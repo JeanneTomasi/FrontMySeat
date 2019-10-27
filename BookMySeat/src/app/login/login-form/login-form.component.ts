@@ -24,6 +24,10 @@ export class LoginFormComponent implements OnInit {
 
   }
 
+  redirect() {
+    this.router.navigate(['/inscription']);
+  }
+
   login() {
     // tslint:disable-next-line:no-string-literal
     // this.user = this.userService.getLog(this.form.controls['username'].value, this.form.controls['password'].value);
@@ -31,7 +35,7 @@ export class LoginFormComponent implements OnInit {
     // if (this.user === this.admin) {
     //   this.router.navigate(['/admin']);
     // } else if (this.user != null) {
-    //   this.router.navigate(['/compteUtilisateur']);
+      this.router.navigate(['/mes-lignes']);
 
     // } else {
     //   this.message = 'Identifiants de connexion erronés';

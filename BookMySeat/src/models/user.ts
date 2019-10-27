@@ -13,7 +13,8 @@ export class User {
     postalCode: number;
     country: string;
     email: string;
-    handicap: Handicap;
+    // Valid par défaut dans la BDD
+    // handicap: Handicap;
     username: string;
     // seat: Seat;
     // tslint:disable-next-line:variable-name

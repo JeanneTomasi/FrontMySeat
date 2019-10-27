@@ -1,37 +1,35 @@
-<h2>Nouveau venu? </h2>
-
-<form [formGroup]="form">
-
+    <div class="centrer">
+            <h2 style="text-align: center;">Nouveau venu? </h2>
     <fieldset>
 
-        <legend>Racontes nous tout!</legend>
+        <legend>Raconte nous tout!</legend>
         <table>
 
             <tr>
                 <td> <label for="name">Nom* :</label></td>
-                <td><input type="text" class="form-control" formControlName="name" /></td>
+                <td><input type="text" class="form-control" [(ngModel)]="name"/></td>
 
 
 
                 <td><label for="firstName">Prenom* :</label></td>
-                <td><input type="text" class="form-control" formControlName="firstName" /></td>
+                <td><input type="text" class="form-control" [(ngModel)]="firstName" /></td>
 
 
 
                 <td><label for="dateDeNaissance">Date de Naissance* :</label></td>
-                <td><input type="datetime" class="form-control" formControlName="dateDeNaissance" /></td>
+                <td><input type="datetime" class="form-control" [(ngModel)]="dateDeNaissance" /></td>
             </tr><br />
 
 
             <tr>
                 <td> <label for="age">Email* :</label></td>
-                <td><input type="email" class="form-control" formControlName="email" /></td>
+                <td><input type="email" class="form-control" [(ngModel)]="email" /></td>
 
 
 
 
                 <td><label for="dateDeNaissance">Username* :</label></td>
-                <td><input type="text" class="form-control" formControlName="username" /></td>
+                <td><input type="text" class="form-control" [(ngModel)]="username" /></td>
             </tr>
         </table>
 
@@ -46,26 +44,27 @@
 
 
                     <td><label for="street">Rue :</label></td>
-                    <td><input type="text" class="form-control" formControlName="street" /></td>
+                    <td><input type="text" class="form-control" [(ngModel)]="street" /></td>
 
 
                     <td><label for="city">Ville :</label></td>
-                    <td><input type="text" class="form-control" formControlName="city" /></td>
+                    <td><input type="text" class="form-control" [(ngModel)]="city" /></td>
                 </tr><br />
 
 
                 <tr>
                     <td><label for="postalCode">Code Postal :</label></td>
-                    <td><input type="text" class="form-control" formControlName="postalCode" /></td>
+                    <td><input type="text" class="form-control" [(ngModel)]="postalCode" /></td>
 
 
                     <td><label for="country">Pays :</label></td>
-                    <td><input type="text" class="form-control" formControlName="country" /></td>
+                    <td><input type="text" class="form-control" [(ngModel)]="country" /></td>
                 </tr>
 
             </table>
         </fieldset>
     </fieldset>
-</form>
 
-<input type="submit" value="Nous rejoindre" />
+<br>
+<button class="ye" type="submit"  mat-raised-button color="primary" (click)="redirect()">Nous rejoindre</button>
+</div>
