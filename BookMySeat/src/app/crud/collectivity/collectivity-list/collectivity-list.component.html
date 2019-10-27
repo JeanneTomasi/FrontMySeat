@@ -6,12 +6,14 @@
   </button>
 </div>
 
-<ul class="collectivity">
-  <li *ngFor="let c of collectivities; let i=index;">
-      <span class="badge">{{c.id_collectivity}}</span> {{c.name}} {{c.operation_area}}
-    <button class="delete" title="Delete"
-      (click)="delete(c.id_collectivity)">x</button>
-      <button class="update" title="Update"
-      (click)="edit(c.id_collectivity)">modifier</button>
-  </li>
-</ul>
+<table class="collectivity" style="border: solid 1px">
+  <tr *ngFor="let c of collectivities; let i=index;">
+    <td><span class="badge">{{c.id_collectivity}}</span></td>
+    <td>{{c.name}}</td>
+    <td>{{c.operation_area}}</td>
+    <td><button class="delete" title="Delete"
+      (click)="delete(c.id_collectivity)">x</button></td>
+    <td><button class="update" title="Update"
+      (click)="edit(c.id_collectivity)">modifier</button></td>
+  </tr>
+</table>

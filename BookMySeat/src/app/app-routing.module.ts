@@ -1,4 +1,5 @@
 import { FormulaireComponent } from './inscription/formulaire/formulaire.component';
+import { CrudComponent } from './crud/crud.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { VehicleEditComponent } from './crud/vehicle/vehicle-edit/vehicle-edit.component';
 import { VehicleListComponent } from './crud/vehicle/vehicle-list/vehicle-list.component';
@@ -50,6 +51,10 @@ import { TraficComponent } from './accueil/trafic/trafic.component';
 
 
 const routes: Routes = [
+
+  {
+    path: 'crud', component: CrudComponent
+  },
   {
     path: 'collectivity', component: CollectivityComponent, children: [
       { path: 'form', component: CollectivityFormComponent },
@@ -126,6 +131,7 @@ const routes: Routes = [
     ]
   },
   { path: 'mes-lignes', component: MesLignesComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'trafic', component: TraficComponent },
   { path: 'mon-profil', component: MonProfilComponent },
   { path: 'reserver', component: ReserverComponent },

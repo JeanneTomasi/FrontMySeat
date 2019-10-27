@@ -70,6 +70,8 @@ import { TransportenterpriseListComponent } from './crud/transportenterprise/tra
 import { TransportenterpriseEditComponent } from './crud/transportenterprise/transportenterprise-edit/transportenterprise-edit.component';
 import { UserEditComponent } from './crud/user/user-edit/user-edit.component';
 import { VehicleEditComponent } from './crud/vehicle/vehicle-edit/vehicle-edit.component';
+import { CrudComponent } from './crud/crud.component';
+import { LoginFormComponent } from './login/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +127,8 @@ import { VehicleEditComponent } from './crud/vehicle/vehicle-edit/vehicle-edit.c
     TransportenterpriseEditComponent,
     UserEditComponent,
     VehicleEditComponent,
+    CrudComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
