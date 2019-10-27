@@ -26,10 +26,9 @@ export class SeatReservationService {
 
   add(seatReservation): Observable<SeatReservation> {
     console.log(seatReservation);
-    return this.http.post<SeatReservation>(this.endpoint + '/add', JSON.stringify(seatReservation), this.httpOptions).pipe(
-      // tslint:disable-next-line:no-shadowed-variable
-      tap((seatReservation) => console.log(`added seatReservation w/ id=${seatReservation.id_seat_reservation}`))
-    );
+    return this.http.post<SeatReservation>(this.endpoint + '/add',
+    JSON.stringify(seatReservation),
+     this.httpOptions);
   }
 
   update(seatReservation): Observable<SeatReservation> {
@@ -47,9 +46,7 @@ export class SeatReservationService {
   }
 
   delete(id): Observable<SeatReservation> {
-    return this.http.delete<SeatReservation>(this.endpoint + '/delete/' + id, this.httpOptions).pipe(
-      tap(_ => console.log(`deleted seatReservation id=${id}`))
-    );
+    return this.http.delete<SeatReservation>(this.endpoint + '/delete/' + id, this.httpOptions);
   }
 
 }

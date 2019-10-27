@@ -1,19 +1,23 @@
 <div>
-        <h2>Seat Reservation Add</h2>
-        <div>
-            <label>Id :
-                <input [(ngModel)]="reservationData.id_seat_reservation" placeholder="Numéro d'identification" />
-            </label><br>
-            <label>Starting_Time :
-                    <input [(ngModel)]="reservationData.starting_time" placeholder="Heure de démarrage" />
-                </label><br>
-                <label>Release_Time :
-                        <input [(ngModel)]="reservationData.release_time" placeholder="Heure de fin" />
-                </label><br>
-            <label>Seat :
-                <select>
-                    <option *ngFor="let s of seats" ng-click="chargeSeat(s.id_seat)">{{s.placement}}</option>
-                </select></label><br>
-        </div>
+    <h2>Seat Reservation Add</h2>
+    <div>
+        <label>Id :
+            <input [(ngModel)]="reservationData.id_seat_reservation" placeholder="Numéro d'identification" />
+        </label><br>
+        <label>Starting_Time :
+            <input [(ngModel)]="reservationData.starting_time" placeholder="Heure de démarrage" />
+        </label><br>
+        <label>Release_Time :
+            <input [(ngModel)]="reservationData.release_time" placeholder="Heure de fin" />
+        </label><br>
+        <label>Utilisateur :
+            <select [(ngModel)]="reservationData.user">
+                <option *ngFor="let u of users" value="{{u}}">{{u.username}}</option>
+            </select></label><br>
+        <label>Seat :
+            <select [(ngModel)]="reservationData.seat">
+                <option *ngFor="let s of seats" value="{{s}}">{{s.placement}}</option>
+            </select></label><br>
+    </div>
         <button (click)="update()">Save</button>
     </div>

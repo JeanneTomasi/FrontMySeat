@@ -35,16 +35,16 @@ ngOnInit() {
 
 }
 
-chargeSeat(id) {
-  this.service2.getById(this.seatData.id_seat).subscribe((value: Seat) => this.seat = value);
-}
+// chargeSeat(id) {
+//   this.service2.getById(this.seatData.id_seat).subscribe((value: Seat) => this.seat = value);
+// }
 
-chargeUser(id) {
-  this.service3.getById(this.userData.id_user).subscribe((value: User) => this.user = value);
-}
+// chargeUser(id) {
+//   this.service3.getById(this.userData.id_user).subscribe((value: User) => this.user = value);
+// }
 
 add() {
-  this.service2.getById(this.seatData.id_seat).subscribe((value: Seat) => this.seat = value);
+  this.service2.getById(this.reservationData.seat.id_seat).subscribe((value: Seat) => this.seat = value);
   this.service3.getById(this.userData.id_user).subscribe((value: User) => this.user = value);
   this.reservation = this.reservationData;
   this.reservationData.user = this.user;
