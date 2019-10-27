@@ -17,4 +17,8 @@ export class AuthentificationComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  gotToCrud() {
+    this.router.navigate(['/crud']);
+  }
+
 }
