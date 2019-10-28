@@ -44,13 +44,16 @@ ngOnInit() {
 // }
 
 add() {
+  console.log(this.reservationData.seat.id_seat);
   this.service2.getById(this.reservationData.seat.id_seat).subscribe((value: Seat) => this.seat = value);
   this.service3.getById(this.userData.id_user).subscribe((value: User) => this.user = value);
   this.reservation = this.reservationData;
+  console.log(this.user);
+  console.log(this.seat);
   this.reservationData.user = this.user;
   this.reservationData.seat = this.seat;
   this.service.add(this.reservation).subscribe((result) => {
-    this.router.navigate(['/reservation/list']);
+    // this.router.navigate(['/reservation/list']);
   });
 }
 }
