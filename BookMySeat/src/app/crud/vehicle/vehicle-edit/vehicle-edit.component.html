@@ -1,1 +1,25 @@
-<p>vehicle-edit works!</p>
+<div>
+    <h2>Vehicle Edit</h2>
+    <div>
+        <label>Id :
+            <input [(ngModel)]="vehicleData.id_vehicle" placeholder="Numéro d'identification" />
+        </label><br>
+        <label>Immatriculation :
+            <input [(ngModel)]="vehicleData.immatriculation" placeholder="Immatriculation" />
+        </label><br>
+        <label>Capacité :
+            <input [(ngModel)]="vehicleData.capacity" placeholder="Nombre total de places" />
+        </label><br>
+        <label>Passagers :
+            <input [(ngModel)]="vehicleData.passengers" placeholder="Nombre de passagers" />
+        </label><br>
+        <label>Capacité :
+            <input [(ngModel)]="vehicleData.placesLeft" placeholder="Places restantes" />
+        </label><br>
+        <label>Capacité :
+            <input [(ngModel)]="vehicleData.fullRate" placeholder="Taux de remplisage (pourcentage)" />
+        </label><br>
+
+    </div>
+    <button mat-raised-button color="accent" (click)="update()">Save</button>
+</div>

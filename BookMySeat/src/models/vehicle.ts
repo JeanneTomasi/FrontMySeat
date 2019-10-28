@@ -11,10 +11,10 @@ export class Vehicle {
     passengers: number;
     placesLeft: number;
     fullRate: number;
-    seat: Seat[];
+    // seat: Seat[];
     line: Line;
     // tslint:disable-next-line:variable-name
-    transit_time: TransitTime;
+    // transit_time: TransitTime;
 
     constructor() { }
 

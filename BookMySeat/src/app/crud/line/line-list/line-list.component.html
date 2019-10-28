@@ -1,7 +1,7 @@
 <h2>Line List</h2>
 
 <div>
-  <button (click)="add()">
+  <button mat-raised-button color="accent" (click)="add()">
     Add
   </button>
 </div>
@@ -11,9 +11,9 @@
     <td><span class="badge">{{l.id_line}}</span></td>
     <td>{{l.name}}</td>
     <td>{{l.localisation}}</td>
-    <td><button class="delete" title="Delete"
+    <td><button mat-raised-button color="accent" class="delete" title="Delete"
       (click)="delete(l.id_line)">x</button></td>
-    <td><button class="update" title="Update"
+    <td><button mat-raised-button color="accent" class="update" title="Update"
       (click)="edit(l.id_line)">modifier</button></td>
   </tr>
 </table>
