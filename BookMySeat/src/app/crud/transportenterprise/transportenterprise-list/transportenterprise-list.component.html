@@ -7,13 +7,20 @@
 </div>
 
 <table class="station" style="border: solid 1px">
+        <tr>
+                <th>id</th>
+                <th>Nom</th>
+                <th>Collectivité</th>
+                <th>Supprimer</th>
+                <th>Mettre à jour</th>
+              </tr>
   <tr *ngFor="let t of tEs; let i=index;">
     <td><span class="badge">{{t.id_transportEntreprise}}</span></td>
     <td> {{t.name}}</td>
       <td>{{t.collectivity.name}}</td>
     <td><button mat-raised-button color="accent" class="delete" title="Delete"
-      (click)="delete(s.id_station)">x</button></td>
+      (click)="delete(t.id_transportEntreprise)">x</button></td>
     <td><button mat-raised-button color="accent" class="update" title="Update"
-      (click)="edit(s.id_station)">modifier</button></td>
+      (click)="edit(t.id_transportEntreprise)">modifier</button></td>
   </tr>
 </table>

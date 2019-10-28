@@ -7,12 +7,24 @@
 </div>
 
 <table class="reservation" style="border: solid 1px">
+    <tr>
+        <th>id</th>
+        <th>Début</th>
+        <th>Fin</th>
+        <th>Utilisateur</th>
+        <th>Ligne</th>
+        <th>Véhicule</th>
+        <th>Place</th>
+        <th>Supprimer</th>
+        <th>Mettre à jour</th>
+      </tr>
   <tr *ngFor="let r of reservations; let i=index;">
     <td><span class="badge">{{r.id_seat_reservation}}</span></td>
     <td> {{r.starting_time}}</td>
     <td>{{r.release_time}}</td>
     <td>{{r.user.username}}</td>
     <td>{{r.seat.vehicle.line.name}}</td>
+    <td>{{r.seat.vehicle.immatriculation}}</td>
     <td>{{r.seat.placement}}</td>
     <td><button mat-raised-button color="accent" class="delete" title="Delete"
       (click)="delete(r.id_seat_reservation)">x</button></td>

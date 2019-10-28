@@ -7,13 +7,23 @@
 </div>
 
 <table class="seat" style="border: solid 1px">
+    <tr>
+        <th>id</th>
+        <th>Place</th>
+        <th>Réservabilité</th>
+        <th>Disponibilité</th>
+        <th>Ligne</th>
+        <th>Supprimer</th>
+        <th>Mettre à jour</th>
+      </tr>
   <tr *ngFor="let s of seats; let i=index;">
     <td><span class="badge">{{s.id_seat}}</span></td>
     <td> {{s.placement}}</td>
     <td><span *ngIf="s.reservable">réservable</span>
       <span *ngIf="!s.reservable">non réservable</span></td>
     <td><span *ngIf="s.reserved">réservé</span>
-      <span *ngIf="!s.reserved">non réservé</span></td>
+      <span *ngIf="!s.reserved&&s.reservable">disponible</span>
+      <span *ngIf="!s.reserved&&!s.reservable">n. c.</span></td>
       <td>{{s.vehicle.line.name}}</td>
     <td><button mat-raised-button color="accent" class="delete" title="Delete"
       (click)="delete(s.id_seat)">x</button></td>

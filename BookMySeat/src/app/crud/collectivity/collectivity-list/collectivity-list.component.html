@@ -1,13 +1,19 @@
-<h2>Collectivity List</h2>
+<h1>Collectivity List</h1>
 
-<div>
-  <button mat-raised-button color="accent" (click)="add()">
-    Add
-  </button>
-</div>
 
-<table class="collectivity" style="border: solid 1px">
-  <tr *ngFor="let c of collectivities; let i=index;">
+<table class="collectivity" >
+  <tr style="border: none;"><button mat-raised-button color="accent" (click)="add()">
+      Add
+    </button></tr>
+    <tr style="border: none;"></tr>
+    <tr style="border: solid 1px">
+        <th>id</th>
+        <th>Nom</th>
+        <th>Secteur</th>
+        <th>Supprimer</th>
+        <th>Mettre à jour</th>
+      </tr>
+  <tr style="border: solid 1px" *ngFor="let c of collectivities; let i=index;">
     <td><span class="badge">{{c.id_collectivity}}</span></td>
     <td>{{c.name}}</td>
     <td>{{c.operation_area}}</td>

@@ -11,6 +11,9 @@ export class SeatReservation {
     user: User;
     seat: Seat;
 
-    constructor() { }
+    constructor() {
+        this.user = new User();
+        this.seat = new Seat();
+     }
 
 }

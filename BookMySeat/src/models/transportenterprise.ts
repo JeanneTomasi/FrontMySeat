@@ -7,5 +7,7 @@ export class TransportEnterprise {
     name: string;
     collectivity: Collectivity;
 
-    constructor() { }
+    constructor() {
+        this.collectivity = new Collectivity();
+    }
 }

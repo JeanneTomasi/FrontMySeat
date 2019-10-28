@@ -13,6 +13,8 @@ export class Seat {
     // tslint:disable-next-line:variable-name
     // seat_reservation: SeatReservation;
 
-    constructor() { }
+    constructor() {
+        this.vehicle = new Vehicle();
+     }
 }
 

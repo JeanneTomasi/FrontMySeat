@@ -12,11 +12,11 @@
         </label><br>
         <label>Utilisateur :
             <select [(ngModel)]="userData.id_user">
-                <option *ngFor="let u of users" value="{{u.id_user}}">{{u.username}}</option>
+                <option *ngFor="let u of users" [ngValue]="u.id_user">{{u.username}}</option>
             </select></label><br>
         <label>Seat :
             <select [(ngModel)]="reservationData.seat">
-                <option *ngFor="let s of seats" value="{{s}}">{{s.placement}}</option>
+                <option *ngFor="let s of seats" [ngValue]="s">{{s.placement}}</option>
             </select></label><br>
     </div>
     <button mat-raised-button color="accent" (click)="add()">Save</button>

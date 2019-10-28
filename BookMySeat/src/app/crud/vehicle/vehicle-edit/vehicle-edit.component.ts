@@ -11,12 +11,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./vehicle-edit.component.css']
 })
 export class VehicleEditComponent implements OnInit {
-  lines: Line[];
-  line = this.lines[0];
+  // lines: Line[];
+  // line = this.lines[0];
 
 
   @Input() vehicleData = { id_vehicle: 0, immatriculation: '', capacity: 0, passengers: 0, placesLeft: 0,
-    fullRate: 0, line: this.line };
+    fullRate: 0 };
 
   vehicle: Vehicle;
   vehicles: Vehicle[];
@@ -31,7 +31,7 @@ export class VehicleEditComponent implements OnInit {
       this.vehicleData = data;
     });
 
-    this.service2.findAll().subscribe((value: Line[]) => this.lines = value);
+    // this.service2.findAll().subscribe((value: Line[]) => this.lines = value);
 
   }
 

@@ -14,7 +14,8 @@ import { Seat } from 'src/models/seat';
 
 export class SeatreservationEditComponent implements OnInit {
 
-  @Input() reservationData = { id_seat_reservation: 0, starting_time: '', release_time: '', user: null, seat: null };
+  reservationData: SeatReservation;
+  // { id_seat_reservation: 0, starting_time: '', release_time: '', user: null, seat: null };
 
   user: User;
   users: User[];
@@ -27,6 +28,8 @@ export class SeatreservationEditComponent implements OnInit {
   constructor(private service: SeatReservationService, private service2: SeatService, private service3: UserService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.reservationData = new SeatReservation();
+
 
     // tslint:disable-next-line:no-string-literal
     this.service.getById(this.route.snapshot.params['id']).subscribe((data: SeatReservation) => {

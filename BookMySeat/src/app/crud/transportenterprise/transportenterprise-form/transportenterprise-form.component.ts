@@ -1,5 +1,5 @@
+import { TransportEnterprise } from 'src/models/transportenterprise';
 import { Collectivity } from './../../../../models/collectivity';
-import { TransportEnterprise } from './../../../../models/transportenterprise';
 import { Router } from '@angular/router';
 import { CollectivityService } from './../../../../services/collectivity.service';
 import { TransportEnterpriseService } from './../../../../services/transportenterprise.service';
@@ -12,25 +12,26 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TransportenterpriseFormComponent implements OnInit {
 
-  collectivity: Collectivity;
-  @Input() tEData = { id_transportEntreprise: 0, name: '', collectivity: this.collectivity };
+  collectivities: Collectivity[];
 
   tE: TransportEnterprise;
-  tEs: TransportEnterprise[];
+  // tEs: TransportEnterprise[];
 
   // tslint:disable-next-line:max-line-length
   constructor(private service: TransportEnterpriseService, private service2: CollectivityService, private router: Router) { }
 
   ngOnInit() {
-    this.service2.getById(1).subscribe((data: Collectivity) => {
-      this.collectivity = data;
+    this.tE = new TransportEnterprise();
+    this.service2.findAll().subscribe((data: Collectivity[]) => {
+      console.log(data);
+      this.collectivities = data;
     });
   }
 
 
   add() {
     // this.seatData.vehicle = this.vehicle;
-    this.tE = this.tEData;
+    // this.tE = this.tEData;
     this.service.add(this.tE).subscribe((result) => {
       this.router.navigate(['/transportEnterprise/list']);
     });
