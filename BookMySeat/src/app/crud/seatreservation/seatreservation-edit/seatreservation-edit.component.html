@@ -1,23 +1,30 @@
 <div>
-    <h2>Seat Reservation Add</h2>
-    <div>
-        <label>Id :
-            <input [(ngModel)]="reservationData.id_seat_reservation" placeholder="Numéro d'identification" />
-        </label><br>
-        <label>Starting_Time :
-            <input [(ngModel)]="reservationData.starting_time" placeholder="Heure de démarrage" />
-        </label><br>
-        <label>Release_Time :
-            <input [(ngModel)]="reservationData.release_time" placeholder="Heure de fin" />
-        </label><br>
-        <label>Utilisateur :
-            <select [(ngModel)]="reservationData.user">
-                <option *ngFor="let u of users" [ngValue]="u">{{u.username}}</option>
-            </select></label><br>
-        <label>Seat :
-            <select [(ngModel)]="reservationData.seat">
-                <option *ngFor="let s of seats" [ngValue]="s">{{s.placement}}</option>
-            </select></label><br>
-    </div>
-    <button mat-raised-button color="accent" (click)="update()">Save</button>
+    <h2>Seat Reservation Edit</h2>
+    <table>
+        <tr>
+            <td>Id :</td>
+            <td><input [(ngModel)]="reservationData.id_seat_reservation" placeholder="Numéro d'identification" /></td>
+        </tr>
+        <tr>
+            <td>Heure de début :</td>
+            <td><input [(ngModel)]="reservationData.starting_time" placeholder="hh:mm" /></td>
+        </tr>
+        <tr>
+            <td>Heure de fin :</td>
+            <td><input [(ngModel)]="reservationData.release_time" placeholder="hh:mm" /></td>
+        </tr>
+        <tr>
+            <td>Utilisateur :</td>
+            <td><select [(ngModel)]="reservationData.user">
+                    <option *ngFor="let u of users" [ngValue]="u">{{u.username}}</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Seat :</td>
+            <td> <select [(ngModel)]="reservationData.seat">
+                    <option *ngFor="let s of seats" [ngValue]="s">{{s.placement}}</option>
+                </select></td>
+        </tr>
+    </table>
+    <p style="text-align: center;"><button mat-raised-button color="accent" (click)="update()">Save</button></p>
 </div>

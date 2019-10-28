@@ -48,19 +48,19 @@ export class SeatreservationFormComponent implements OnInit {
 
   add() {
     console.log(this.reservationData.seat);
-    this.service2.getById(this.reservationData.seat.id_seat).subscribe((value: Seat) => {
-      this.seat = value;
-      this.service3.getById(this.userData.id_user).subscribe((valueU: User) => {
-        this.user = valueU;
-        this.reservation = this.reservationData;
-        this.reservationData.user = this.user;
-        this.reservationData.seat = this.seat;
-        this.service.add(this.reservation).subscribe((result) => {
-          this.router.navigate(['/reservation/list']);
-        });
-      });
-
+    // this.service2.getById(this.reservationData.seat.id_seat).subscribe((value: Seat) => {
+    //   this.seat = value;
+    //   this.service3.getById(this.userData.id_user).subscribe((valueU: User) => {
+    //     this.user = valueU;
+    this.reservation = this.reservationData;
+    // this.reservationData.user = this.user;
+    // this.reservationData.seat = this.seat;
+    this.service.add(this.reservation).subscribe((result) => {
+      this.router.navigate(['/reservation/list']);
     });
+    //   });
+
+    // });
 
   }
 }

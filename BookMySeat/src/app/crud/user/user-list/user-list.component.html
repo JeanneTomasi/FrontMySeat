@@ -1,12 +1,20 @@
 <h2 id="tutle">Users List</h2>
 
-<div>
-  <button mat-raised-button color="accent" (click)="add()">
-    Add
-  </button>
-</div>
-
-<table class="user" style="border: solid 1px white; color: white;">
+<table class="user" style="border: solid 1px;">
+  <tr>
+    <th>id</th>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Date de naissance</th>
+    <th>Adresse</th>
+    <th>Code postal</th>
+    <th>Ville</th>
+    <th>Pays</th>
+    <th>Email</th>
+    <th>Pseudo</th>
+    <th>Supprimer</th>
+    <th>Mettre à jour</th>
+  </tr>
   <tr *ngFor="let u of users; let i=index;">
     <td><span class="badge">{{u.id_user}}</span></td>
     <td> {{u.name}}</td>
@@ -24,3 +32,5 @@
       (click)="edit(u.id_user)">modifier</button></td>
   </tr>
 </table>
+<p style="text-align: center;"><button mat-raised-button color="accent" (click)="add()">Add</button></p>
+

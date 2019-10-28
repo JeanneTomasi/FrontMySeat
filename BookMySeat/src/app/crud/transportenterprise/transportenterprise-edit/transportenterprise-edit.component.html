@@ -1,12 +1,20 @@
 <div>
         <h2>Transport Enterprise Edit</h2>
-        <div>
-            <label>Id :
-                <input [(ngModel)]="tEData.id_transportEntreprise" placeholder="Numéro d'identification" />
-            </label><br>
-            <label>Nom :
-                <input [(ngModel)]="tEData.name" placeholder="Nom" />
-            </label><br>
-        </div>
-        <button mat-raised-button color="accent" (click)="update()">Save</button>
-    </div>
+
+        <table>
+                <tr>
+                    <td>Id :</td>
+                    <td><input [(ngModel)]="tE.id_transportEntreprise" placeholder="Numéro d'identification" /></td>
+                </tr>
+                <tr>
+                    <td>Nom :</td>
+                    <td><input [(ngModel)]="tE.name" placeholder="Nom" /></td>
+                </tr>
+                <tr>
+                    <td>Collectivité :</td>
+                    <td><select [(ngModel)]="tE.collectivity">
+                        <option *ngFor="let c of collectivities" [ngValue]="c">{{c.name}}</option>
+                    </select></td>
+                </tr>
+            </table>
+        <p style="text-align: center;"><button mat-raised-button color="accent" (click)="update()">Save</button></p>    </div>

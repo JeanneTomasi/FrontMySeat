@@ -1,38 +1,25 @@
+table {
+    border-collapse: collapse;
+    margin: auto
+}
+
+h2{
+    text-align: center;
+    font-family: 'Dancing Script';
+    font-size: 35pt;
+}
+
+button{
+    display: block;
+   margin : auto;
+}
+
+.yolo{
+    margin: auto;
+}
+
 .centrer{
+    width: 70%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 50px;
-    color: white;
+    margin : auto;
 }
-
-.ye{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#title{
-    text-align: center;
-    padding-top: 160px;
-    color: white;
-}
-
-#tutle{
-text-align: center;
-color: white
-}
-
-.youpi{
-    margin-left: auto;
-    margin-right: auto;
-    padding : 50px;
-    text-align: center;
-}
-
-.body{
-    margin-top: -25px;
-    background-image: url("https://tof.cx/images/2019/10/28/b73506cda9e69189a4fac346ba0480fd.jpg");
-    height: 100%
-}
-
