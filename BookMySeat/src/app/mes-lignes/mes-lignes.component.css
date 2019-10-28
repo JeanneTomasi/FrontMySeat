@@ -1,11 +1,20 @@
 #title {
-    position: relative;
-    margin-top: 5cm;
-    margin-left: 40%;
-    align-self: center;
+    position: absolute;
+    margin-top: 1cm;
+    margin-left: 45%;
+    margin-right: auto;
     font-family: 'Dancing Script';
+    color: white;
+    font-size: 350%;
 }
 table {
+    position: absolute;
+    margin-top: 15%;
     width: 70%;
     margin-left: 15%;
+}
+.body{
+    background-image: url("http://www.abstractlyon.com/wp-content/uploads/2017/03/Lyon-Rhone-Nuit-1612x1008.jpg");
+    background-repeat: repeat;
+    height: 100%;
 }
