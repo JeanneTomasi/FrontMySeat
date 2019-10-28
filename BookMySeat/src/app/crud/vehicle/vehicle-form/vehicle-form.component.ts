@@ -35,7 +35,7 @@ export class VehicleFormComponent implements OnInit {
     // this.vehicle = this.vehicleData;
     // console.log(this.line);
     this.service.add(this.vehicleData).subscribe((result) => {
-      // this.router.navigate(['/reservation/list']);
+      this.router.navigate(['/vehicle/list']);
     });
   }
 }
