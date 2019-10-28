@@ -1,1 +1,19 @@
-<p>station-list works!</p>
+<h2>Station List</h2>
+
+<div>
+  <button (click)="add()">
+    Add
+  </button>
+</div>
+
+<table class="station" style="border: solid 1px">
+  <tr *ngFor="let s of stations; let i=index;">
+    <td><span class="badge">{{s.id_station}}</span></td>
+    <td> {{s.name}}</td>
+      <td>{{s.localisation}}</td>
+    <td><button class="delete" title="Delete"
+      (click)="delete(s.id_station)">x</button></td>
+    <td><button class="update" title="Update"
+      (click)="edit(s.id_station)">modifier</button></td>
+  </tr>
+</table>

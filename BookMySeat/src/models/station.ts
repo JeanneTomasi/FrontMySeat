@@ -6,7 +6,7 @@ export class Station {
     name: string;
     localisation: string;
     // tslint:disable-next-line:variable-name
-    transit_time: TransitTime;
+    // transit_time: TransitTime;
 
     constructor() { }
 }

@@ -17,6 +17,10 @@ export class GestionLignesComponent implements OnInit {
     this.router.navigate(['/line/list']);
   }
 
+  stations() {
+    this.router.navigate(['/station/list']);
+  }
+
   vehicles() {
     this.router.navigate(['/vehicle/list']);
   }
@@ -25,8 +29,6 @@ export class GestionLignesComponent implements OnInit {
     this.router.navigate(['/seat/list']);
   }
 
-  reservations() {
-    this.router.navigate(['/reservation/list']);
-  }
+
 
 }

@@ -21,4 +21,8 @@ export class GestionUtilisateursComponent implements OnInit {
     this.router.navigate(['/user/form']);
   }
 
+  reservations() {
+    this.router.navigate(['/reservation/list']);
+  }
+
 }
