@@ -72,6 +72,10 @@ import { UserEditComponent } from './crud/user/user-edit/user-edit.component';
 import { VehicleEditComponent } from './crud/vehicle/vehicle-edit/vehicle-edit.component';
 import { CrudComponent } from './crud/crud.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
+import { GestionAdministrationComponent } from './crud/gestion-administration/gestion-administration.component';
+import { GestionLignesComponent } from './crud/gestion-lignes/gestion-lignes.component';
+import { GestionUtilisateursComponent } from './crud/gestion-utilisateurs/gestion-utilisateurs.component';
+import { RetourComponent } from './crud/retour/retour.component';
 
 @NgModule({
   declarations: [
@@ -129,6 +133,10 @@ import { LoginFormComponent } from './login/login-form/login-form.component';
     VehicleEditComponent,
     CrudComponent,
     LoginFormComponent,
+    GestionAdministrationComponent,
+    GestionLignesComponent,
+    GestionUtilisateursComponent,
+    RetourComponent,
   ],
   imports: [
     BrowserModule,

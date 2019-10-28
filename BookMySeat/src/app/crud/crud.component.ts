@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  administration() {
+    this.router.navigate(['/administration']);
+  }
+
+  lines() {
+    this.router.navigate(['/lignes']);
+  }
+
+  users() {
+    this.router.navigate(['/utilisateurs']);
   }
 
 }
