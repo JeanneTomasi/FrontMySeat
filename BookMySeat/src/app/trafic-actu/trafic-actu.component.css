@@ -1,3 +1,17 @@
+#title {
+    position: absolute;
+    margin-top: 1cm;
+    margin-left: 45%;
+    margin-right: auto;
+    font-family: 'Dancing Script';
+    color: white;
+    font-size: 350%;
+}
+table {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .body{
     background-image: url("https://www.serrurier-lyon-vitrier.fr/wp-content/uploads/2017/12/lyon-de-nuit.jpg");
     background-repeat: repeat;
