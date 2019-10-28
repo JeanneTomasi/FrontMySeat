@@ -26,5 +26,11 @@
                 <td>Taux de remplissage % :</td>
                 <td><input [(ngModel)]="vehicleData.fullRate" placeholder="Taux de remplisage (pourcentage)" /></td>
             </tr>
+            <tr>
+                <td>Ligne :</td>
+                <td><select [(ngModel)]="vehicleData.line">
+                        <option *ngFor="let l of lines" [ngValue]="l">{{l.name}}</option>
+                    </select></td>
+            </tr>
         </table>
     <p style="text-align: center;"><button mat-raised-button color="accent" (click)="update()">Save</button></p></div>

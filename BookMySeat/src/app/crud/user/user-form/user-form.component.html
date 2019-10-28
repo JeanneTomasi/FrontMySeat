@@ -64,6 +64,28 @@
 
     </table>
 </fieldset>
+<fieldset><legend>Handicap</legend>
+    <table>
+
+        <tr>
+            <td> <label for="handicap">Handicap :</label></td>
+            <td><select [(ngModel)]="userData.handicap">
+                    <option value="WarWounded">Blessé de guerre</option>
+                    <option value="Blind">Aveugle</option>
+                    <option value="DisabledInIndustrialAccidents">Accidenté industriel</option>
+                    <option value="CivilInfirmWithPainfulStandingPosition">Accidenté civil</option>
+                    <option value="Pregnant">Enceinte</option>
+                    <option value="LittleChildren">Jeunes Enfants</option>
+                    <option value="CivilInfirm">Blessé civil</option>
+                    <option value="PainfulStandingPosition">Station debout pénible</option>
+                    <option value="Elderly">Personne âgée</option>
+                    <option value="Valid">Valide</option>
+               </select></td>
+            
+        </tr>
+
+    </table>
+</fieldset>
 </fieldset>
 
 <p style="text-align: center;"><button mat-raised-button color="accent" (click)="add()">Save</button></p>    </div>

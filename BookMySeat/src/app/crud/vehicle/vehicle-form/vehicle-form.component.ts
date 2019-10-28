@@ -12,7 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VehicleFormComponent implements OnInit {
 
-  // lines: Line[];
+  lines: Line[];
   // line = this.lines[0];
 
 
@@ -26,7 +26,7 @@ export class VehicleFormComponent implements OnInit {
 
   ngOnInit() {
     this.vehicleData = new Vehicle();
-    // this.service2.findAll().subscribe((value: Line[]) => this.lines = value);
+    this.service2.findAll().subscribe((value: Line[]) => this.lines = value);
 
   }
 

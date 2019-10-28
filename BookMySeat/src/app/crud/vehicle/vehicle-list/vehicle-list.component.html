@@ -10,6 +10,7 @@
         <th>Passagers</th>
         <th>Places disponibles</th>
         <th>Taux de remplissage %</th>
+        <th>Ligne</th>
         <th>Supprimer</th>
         <th>Mettre à jour</th>
     </tr>
@@ -20,6 +21,7 @@
         <td>{{v.passengers}}</td>
         <td>{{v.placesLeft}}</td>
         <td>{{v.fullRate}}</td>
+        <td>{{v.line.name}}</td>
         <td><button mat-raised-button color="accent" class="delete" title="Delete"
                 (click)="delete(v.id_vehicle)">x</button></td>
         <td><button mat-raised-button color="accent" class="update" title="Update"

@@ -11,7 +11,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./vehicle-edit.component.css']
 })
 export class VehicleEditComponent implements OnInit {
-  // lines: Line[];
+  lines: Line[];
   // line = this.lines[0];
 
 
@@ -31,7 +31,7 @@ export class VehicleEditComponent implements OnInit {
       this.vehicleData = data;
     });
 
-    // this.service2.findAll().subscribe((value: Line[]) => this.lines = value);
+    this.service2.findAll().subscribe((value: Line[]) => this.lines = value);
 
   }
 
