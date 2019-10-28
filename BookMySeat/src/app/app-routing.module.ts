@@ -1,3 +1,6 @@
+import { GestionUtilisateursComponent } from './crud/gestion-utilisateurs/gestion-utilisateurs.component';
+import { GestionLignesComponent } from './crud/gestion-lignes/gestion-lignes.component';
+import { GestionAdministrationComponent } from './crud/gestion-administration/gestion-administration.component';
 import { FormulaireComponent } from './inscription/formulaire/formulaire.component';
 import { CrudComponent } from './crud/crud.component';
 import { InscriptionComponent } from './inscription/inscription.component';
@@ -137,6 +140,9 @@ const routes: Routes = [
   { path: 'mon-profil', component: MonProfilComponent },
   { path: 'reserver', component: ReserverComponent },
   { path: 'trafic-actu', component: TraficActuComponent },
+  { path: 'administration', component: GestionAdministrationComponent },
+  { path: 'lignes', component: GestionLignesComponent },
+  { path: 'utilisateurs', component: GestionUtilisateursComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }
 ];
 

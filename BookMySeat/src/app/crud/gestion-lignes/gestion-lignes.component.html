@@ -1,0 +1,31 @@
+<div class="body">
+    <app-accueil-button></app-accueil-button>
+
+    <h3 id="title">BookMySeat</h3>
+    <h1 id="tutle">Gestion des lignes</h1>
+
+    <div class="youpi">
+        <table style="text-align: center;">
+
+            <tr>
+                <td> <button mat-raised-button color="warn" class="accueil-button"
+                        (click)="lines()">Consulter les lignes</button>
+                </td>
+                <td> <button mat-raised-button color="warn" class="accueil-button"
+                        (click)="vehicles()">Gestion des véhicules</button>
+                </td>
+        
+                <td> <button mat-raised-button color="warn" class="accueil-button"
+                        (click)="seats()">Gestion des sièges</button>
+                </td>
+                <td> <button mat-raised-button color="warn" class="accueil-button"
+                        (click)="reservations()">Consultation des réservations</button>
+                </td>
+            </tr>
+
+
+        </table>
+
+    </div>
+</div>
+<app-retour></app-retour>
