@@ -1,1 +1,26 @@
-<p>user-list works!</p>
+<h2>SeatReservation List</h2>
+
+<div>
+  <button (click)="add()">
+    Add
+  </button>
+</div>
+
+<table class="user" style="border: solid 1px">
+  <tr *ngFor="let u of users; let i=index;">
+    <td><span class="badge">{{u.id_user}}</span></td>
+    <td> {{u.name}}</td>
+    <td>{{u.firstName}}</td>
+    <td>{{u.dateDeNaissance}}</td>
+    <td>{{u.num}} {{u.street}}</td>
+    <td>{{u.postalCode}}</td>
+    <td>{{u.city}}</td>
+    <td>{{u.country}}</td>
+    <td>{{u.email}}</td>
+    <td>{{u.username}}</td>
+    <td><button class="delete" title="Delete"
+      (click)="delete(u.id_user)">x</button></td>
+    <td><button class="update" title="Update"
+      (click)="edit(u.id_user)">modifier</button></td>
+  </tr>
+</table>

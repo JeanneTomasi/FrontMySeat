@@ -1,1 +1,15 @@
-<p>station-edit works!</p>
+<div>
+    <h2>Station Edit</h2>
+    <div>
+        <label>Id :
+            <input [(ngModel)]="stationData.id_station" placeholder="Numéro d'identification" />
+        </label><br>
+        <label>Nom :
+            <input [(ngModel)]="stationData.name" placeholder="Nom" />
+        </label><br>
+        <label>Localisation :
+            <input [(ngModel)]="stationData.localisation" placeholder="Emplacement" />
+        </label><br>
+    </div>
+    <button (click)="update()">Save</button>
+</div>

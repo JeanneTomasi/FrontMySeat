@@ -1,7 +1,7 @@
 <h2>Collectivity List</h2>
 
 <div>
-  <button (click)="add()">
+  <button mat-raised-button color="accent" (click)="add()">
     Add
   </button>
 </div>
@@ -11,9 +11,11 @@
     <td><span class="badge">{{c.id_collectivity}}</span></td>
     <td>{{c.name}}</td>
     <td>{{c.operation_area}}</td>
-    <td><button class="delete" title="Delete"
+    <td><button mat-raised-button color="accent" class="delete" title="Delete"
       (click)="delete(c.id_collectivity)">x</button></td>
-    <td><button class="update" title="Update"
+    <td><button mat-raised-button color="accent" class="update" title="Update"
       (click)="edit(c.id_collectivity)">modifier</button></td>
   </tr>
 </table>
+
+<app-retour></app-retour>
