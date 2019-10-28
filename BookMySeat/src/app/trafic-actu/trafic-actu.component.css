@@ -7,13 +7,17 @@
     color: white;
     font-size: 350%;
 }
-table {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+#table {
+    grid-column: 2;
+    grid-row: 2;
 }
 .body{
     background-image: url("https://www.serrurier-lyon-vitrier.fr/wp-content/uploads/2017/12/lyon-de-nuit.jpg");
     background-repeat: repeat;
     height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-template-rows: repeat(5, 1fr);
 }
