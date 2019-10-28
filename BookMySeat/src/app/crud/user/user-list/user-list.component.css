@@ -1,8 +1,13 @@
 td {
-    border: solid 1px;
+    border: solid 1px white;
     padding: 5px
 }
 
 table {
     border-collapse: collapse;
 }
+
+#tutle{
+    text-align: center;
+    color: white
+    }

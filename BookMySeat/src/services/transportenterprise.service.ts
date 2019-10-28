@@ -10,7 +10,7 @@ export class TransportEnterpriseService {
   body: any;
   editMode = false;
 
-  endpoint = 'http://localhost:8080/apiTransportEnterprise';
+  endpoint = 'http://localhost:8080/apiTransportEntreprise';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

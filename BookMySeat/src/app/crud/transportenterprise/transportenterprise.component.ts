@@ -1,3 +1,4 @@
+import { TransportEnterprise } from './../../../models/transportenterprise';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transportenterprise.component.css']
 })
 export class TransportenterpriseComponent implements OnInit {
+
 
   constructor() { }
 

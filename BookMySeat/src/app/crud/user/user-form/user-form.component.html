@@ -39,8 +39,8 @@
         <table>
 
             <tr>
-                <td> <label for="num_street" [(ngModel)]="userData.num">N° rue :</label></td>
-                <td><input type="text" /></td>
+                <td> <label for="num_street">N° rue :</label></td>
+                <td><input type="text" [(ngModel)]="userData.num"/></td>
 
 
                 <td><label for="street">Rue :</label></td>
@@ -68,3 +68,6 @@
 <br>
 <button class="ye" type="submit"  mat-raised-button color="primary" (click)="redirect()">Ajouter</button>
 </div>
+
+
+    

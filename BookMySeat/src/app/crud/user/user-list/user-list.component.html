@@ -1,12 +1,12 @@
-<h2>Users List</h2>
+<h2 id="tutle">Users List</h2>
 
 <div>
-  <button (click)="add()">
+  <button mat-raised-button color="accent" (click)="add()">
     Add
   </button>
 </div>
 
-<table class="user" style="border: solid 1px">
+<table class="user" style="border: solid 1px white; color: white;">
   <tr *ngFor="let u of users; let i=index;">
     <td><span class="badge">{{u.id_user}}</span></td>
     <td> {{u.name}}</td>
@@ -18,9 +18,9 @@
     <td>{{u.country}}</td>
     <td>{{u.email}}</td>
     <td>{{u.username}}</td>
-    <td><button class="delete" title="Delete"
+    <td><button mat-raised-button color="accent" class="delete" title="Delete"
       (click)="delete(u.id_user)">x</button></td>
-    <td><button class="update" title="Update"
+    <td><button mat-raised-button color="accent" class="update" title="Update"
       (click)="edit(u.id_user)">modifier</button></td>
   </tr>
 </table>

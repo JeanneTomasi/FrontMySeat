@@ -1,1 +1,12 @@
-<p>transportenterprise-edit works!</p>
+<div>
+        <h2>Transport Enterprise Edit</h2>
+        <div>
+            <label>Id :
+                <input [(ngModel)]="tEData.id_transportEntreprise" placeholder="Numéro d'identification" />
+            </label><br>
+            <label>Nom :
+                <input [(ngModel)]="tEData.name" placeholder="Nom" />
+            </label><br>
+        </div>
+        <button mat-raised-button color="accent" (click)="update()">Save</button>
+    </div>
