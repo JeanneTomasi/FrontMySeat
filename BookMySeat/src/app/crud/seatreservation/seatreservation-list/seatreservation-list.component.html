@@ -1,7 +1,7 @@
 <h2>SeatReservation List</h2>
 
 <div>
-  <button (click)="add()">
+  <button mat-raised-button color="accent" (click)="add()">
     Add
   </button>
 </div>
@@ -14,9 +14,9 @@
     <td>{{r.user.username}}</td>
     <td>{{r.seat.vehicle.line.name}}</td>
     <td>{{r.seat.placement}}</td>
-    <td><button class="delete" title="Delete"
+    <td><button mat-raised-button color="accent" class="delete" title="Delete"
       (click)="delete(r.id_seat_reservation)">x</button></td>
-    <td><button class="update" title="Update"
+    <td><button mat-raised-button color="accent" class="update" title="Update"
       (click)="edit(r.id_seat_reservation)">modifier</button></td>
   </tr>
 </table>

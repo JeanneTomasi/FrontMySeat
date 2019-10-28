@@ -1,7 +1,7 @@
 <h2>Station List</h2>
 
 <div>
-  <button (click)="add()">
+  <button mat-raised-button color="accent" (click)="add()">
     Add
   </button>
 </div>
@@ -11,9 +11,9 @@
     <td><span class="badge">{{s.id_station}}</span></td>
     <td> {{s.name}}</td>
       <td>{{s.localisation}}</td>
-    <td><button class="delete" title="Delete"
+    <td><button mat-raised-button color="accent" class="delete" title="Delete"
       (click)="delete(s.id_station)">x</button></td>
-    <td><button class="update" title="Update"
+    <td><button mat-raised-button color="accent" class="update" title="Update"
       (click)="edit(s.id_station)">modifier</button></td>
   </tr>
 </table>

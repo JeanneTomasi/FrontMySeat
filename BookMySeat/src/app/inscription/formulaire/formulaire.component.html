@@ -1,70 +1,70 @@
-    <div class="centrer">
-            <h2 style="text-align: center;">Nouveau venu? </h2>
+<div class="centrer">
+        <h2 style="text-align: center;">Ajout d'un utilisateur </h2>
+<fieldset>
+
+    <!-- <legend>Raconte nous tout!</legend> -->
+    <table>
+
+        <tr>
+            <td> <label for="name">Nom* :</label></td>
+            <td><input type="text" class="form-control" [(ngModel)]="userData.name"/></td>
+
+
+
+            <td><label for="firstName">Prenom* :</label></td>
+            <td><input type="text" class="form-control" [(ngModel)]="userData.firstName" /></td>
+
+
+
+            <td><label for="dateDeNaissance">Date de Naissance* :</label></td>
+            <td><input type="datetime" class="form-control" [(ngModel)]="userData.dateDeNaissance" /></td>
+        </tr><br />
+
+
+        <tr>
+            <td> <label for="age">Email* :</label></td>
+            <td><input type="email" class="form-control" [(ngModel)]="userData.email" /></td>
+
+
+
+
+            <td><label for="dateDeNaissance">Username* :</label></td>
+            <td><input type="text" class="form-control" [(ngModel)]="userData.username" /></td>
+        </tr>
+    </table>
+
     <fieldset>
 
-        <legend>Raconte nous tout!</legend>
+        <legend> Adresse : </legend>
         <table>
 
             <tr>
-                <td> <label for="name">Nom* :</label></td>
-                <td><input type="text" class="form-control" [(ngModel)]="name"/></td>
+                <td> <label for="num_street" [(ngModel)]="userData.num">N° rue :</label></td>
+                <td><input type="text" /></td>
 
 
-
-                <td><label for="firstName">Prenom* :</label></td>
-                <td><input type="text" class="form-control" [(ngModel)]="firstName" /></td>
-
+                <td><label for="street">Rue :</label></td>
+                <td><input type="text" class="form-control" [(ngModel)]="userData.street" /></td>
 
 
-                <td><label for="dateDeNaissance">Date de Naissance* :</label></td>
-                <td><input type="datetime" class="form-control" [(ngModel)]="dateDeNaissance" /></td>
+                <td><label for="city">Ville :</label></td>
+                <td><input type="text" class="form-control" [(ngModel)]="userData.city" /></td>
             </tr><br />
 
 
             <tr>
-                <td> <label for="age">Email* :</label></td>
-                <td><input type="email" class="form-control" [(ngModel)]="email" /></td>
+                <td><label for="postalCode">Code Postal :</label></td>
+                <td><input type="text" class="form-control" [(ngModel)]="userData.postalCode" /></td>
 
 
-
-
-                <td><label for="dateDeNaissance">Username* :</label></td>
-                <td><input type="text" class="form-control" [(ngModel)]="username" /></td>
+                <td><label for="country">Pays :</label></td>
+                <td><input type="text" class="form-control" [(ngModel)]="userData.country" /></td>
             </tr>
+
         </table>
-
-        <fieldset>
-
-            <legend> Adresse : </legend>
-            <table>
-
-                <tr>
-                    <td> <label for="num_street">N° rue :</label></td>
-                    <td><input type="text" /></td>
-
-
-                    <td><label for="street">Rue :</label></td>
-                    <td><input type="text" class="form-control" [(ngModel)]="street" /></td>
-
-
-                    <td><label for="city">Ville :</label></td>
-                    <td><input type="text" class="form-control" [(ngModel)]="city" /></td>
-                </tr><br />
-
-
-                <tr>
-                    <td><label for="postalCode">Code Postal :</label></td>
-                    <td><input type="text" class="form-control" [(ngModel)]="postalCode" /></td>
-
-
-                    <td><label for="country">Pays :</label></td>
-                    <td><input type="text" class="form-control" [(ngModel)]="country" /></td>
-                </tr>
-
-            </table>
-        </fieldset>
     </fieldset>
+</fieldset>
 
 <br>
-<button class="ye" type="submit"  mat-raised-button color="primary" (click)="redirect()">Nous rejoindre</button>
+<button class="ye" type="submit"  mat-raised-button color="primary" (click)="redirect()">Ajouter</button>
 </div>
