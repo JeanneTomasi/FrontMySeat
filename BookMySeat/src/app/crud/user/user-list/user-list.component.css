@@ -1,13 +1,23 @@
-td {
-    border: solid 1px white;
+td, th {
+    border: solid 1px;
     padding: 5px
 }
 
 table {
     border-collapse: collapse;
+    margin: auto
 }
 
-#tutle{
+h2{
     text-align: center;
-    color: white
-    }
+    font-family: 'Dancing Script';
+    font-size: 35pt;
+}
+
+button{
+    text-align: center;
+}
+
+.yolo{
+    margin: auto;
+}

@@ -16,25 +16,25 @@ export class VehicleFormComponent implements OnInit {
   // line = this.lines[0];
 
 
-  @Input() vehicleData = { id_vehicle: 0, immatriculation: '', capacity: 0, passengers: 0, placesLeft: 0,
-    fullRate: 0 };
+  // @Input() vehicleData = { id_vehicle: 0, immatriculation: '', capacity: 0, passengers: 0, placesLeft: 0,
+  //   fullRate: 0 };
 
-  vehicle: Vehicle;
+  vehicleData: Vehicle;
   vehicles: Vehicle[];
   // tslint:disable-next-line:max-line-length
   constructor(private service: VehicleService, private service2: LineService, private router: Router) { }
 
   ngOnInit() {
-
+    this.vehicleData = new Vehicle();
     // this.service2.findAll().subscribe((value: Line[]) => this.lines = value);
 
   }
 
   add() {
     // console.log(this.vehicleData.line);
-    this.vehicle = this.vehicleData;
+    // this.vehicle = this.vehicleData;
     // console.log(this.line);
-    this.service.add(this.vehicle).subscribe((result) => {
+    this.service.add(this.vehicleData).subscribe((result) => {
       // this.router.navigate(['/reservation/list']);
     });
   }

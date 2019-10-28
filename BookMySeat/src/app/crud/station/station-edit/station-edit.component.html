@@ -1,15 +1,18 @@
 <div>
     <h2>Station Edit</h2>
-    <div>
-        <label>Id :
-            <input [(ngModel)]="stationData.id_station" placeholder="Numéro d'identification" />
-        </label><br>
-        <label>Nom :
-            <input [(ngModel)]="stationData.name" placeholder="Nom" />
-        </label><br>
-        <label>Localisation :
-            <input [(ngModel)]="stationData.localisation" placeholder="Emplacement" />
-        </label><br>
-    </div>
-    <button mat-raised-button color="accent" (click)="update()">Save</button>
-</div>
+
+    <table>
+            <tr>
+                <td>Id :</td>
+                <td><input [(ngModel)]="stationData.id_station" placeholder="Numéro d'identification" /></td>
+            </tr>
+            <tr>
+                <td>Nom :</td>
+                <td><input [(ngModel)]="stationData.name" placeholder="Nom" /></td>
+            </tr>
+            <tr>
+                <td>Localisation :</td>
+                <td><input [(ngModel)]="stationData.localisation" placeholder="Emplacement" /></td>
+            </tr>
+        </table>
+    <p style="text-align: center;"><button mat-raised-button color="accent" (click)="update()">Save</button></p></div>

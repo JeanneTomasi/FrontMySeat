@@ -12,9 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TransportenterpriseEditComponent implements OnInit {
 
-  collectivity: Collectivity;
-  @Input() tEData = { id_transportEntreprise: 0, name: '', collectivity: this.collectivity };
-
+  collectivities: Collectivity[];
   tE: TransportEnterprise;
   tEs: TransportEnterprise[];
 
@@ -22,20 +20,21 @@ export class TransportenterpriseEditComponent implements OnInit {
   constructor(private service: TransportEnterpriseService, private service2: CollectivityService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.service2.getById(1).subscribe((data: Collectivity) => {
-      this.collectivity = data;
+    this.tE = new TransportEnterprise();
+    this.service2.findAll().subscribe((data: Collectivity[]) => {
+      this.collectivities = data;
     });
 
 
     // tslint:disable-next-line:no-string-literal
     this.service.getById(this.route.snapshot.params['id']).subscribe((data: TransportEnterprise) => {
       console.log(data);
-      this.tEData = data;
+      this.tE = data;
     });
   }
 
   update() {
-    this.tE = this.tEData;
+    // this.tE = this.tEData;
     this.service.update(this.tE).subscribe((result) => {
       this.router.navigate(['/transportEnterprise/list']);
     });

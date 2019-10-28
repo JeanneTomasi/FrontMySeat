@@ -11,8 +11,7 @@ import { Seat } from 'src/models/seat';
 })
 export class SeatFormComponent implements OnInit {
 
-  @Input() seatData = { id_seat: 0, placement: '', reservable: false, isReserved: false, vehicle: null};
-
+  seatData: Seat;
   seat: Seat;
   vehicles: Vehicle[];
   vehicle: Vehicle;
@@ -21,6 +20,7 @@ export class SeatFormComponent implements OnInit {
   constructor(private service: SeatService, private serviceVehicle: VehicleService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.seatData = new Seat();
     this.serviceVehicle.findAll().subscribe((value: Vehicle[]) => this.vehicles = value);
   }
 
@@ -30,8 +30,8 @@ export class SeatFormComponent implements OnInit {
 
   add() {
     // this.seatData.vehicle = this.vehicle;
-    this.seat = this.seatData;
-    this.service.add(this.seat).subscribe((result) => {
+    // this.seat = this.seatData;
+    this.service.add(this.seatData).subscribe((result) => {
       this.router.navigate(['/seat/list']);
     });
   }

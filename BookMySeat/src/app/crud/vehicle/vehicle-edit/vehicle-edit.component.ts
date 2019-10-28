@@ -15,10 +15,10 @@ export class VehicleEditComponent implements OnInit {
   // line = this.lines[0];
 
 
-  @Input() vehicleData = { id_vehicle: 0, immatriculation: '', capacity: 0, passengers: 0, placesLeft: 0,
-    fullRate: 0 };
+  // @Input() vehicleData = { id_vehicle: 0, immatriculation: '', capacity: 0, passengers: 0, placesLeft: 0,
+  //   fullRate: 0 };
 
-  vehicle: Vehicle;
+  vehicleData = new Vehicle();
   vehicles: Vehicle[];
   // tslint:disable-next-line:max-line-length
   constructor(private service: VehicleService, private service2: LineService, private route: ActivatedRoute, private router: Router) { }
@@ -36,8 +36,8 @@ export class VehicleEditComponent implements OnInit {
   }
 
   update() {
-    this.vehicle = this.vehicleData;
-    this.service.update(this.vehicle).subscribe((result) => {
+    // this.vehicle = this.vehicleData;
+    this.service.update(this.vehicleData).subscribe((result) => {
       this.router.navigate(['/vehicle/list']);
     });
   }

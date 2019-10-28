@@ -1,5 +1,5 @@
 import { UserService } from './../../../../services/user.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from './../../../../models/user';
 import { Component, OnInit, Input } from '@angular/core';
 @Component({
@@ -9,21 +9,26 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserEditComponent implements OnInit {
 
-  user = new User();
+  userData = new User();
   // form: FormGroup;
-  @Input() userData = {
-    id_user: 0, name: '', firstName: '', dateDeNaissance: null, num: 0, street: '',
-    city: '', postalCode: 0, country: '', email: '', username: ''
-  };
+  // @Input() userData = {
+  //   id_user: 0, name: '', firstName: '', dateDeNaissance: null, num: 0, street: '',
+  //   city: '', postalCode: 0, country: '', email: '', username: ''
+  // };
 
-  constructor(private router: Router, private service: UserService) { }
+  constructor(private router: Router, private service: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // tslint:disable-next-line:no-string-literal
+    this.service.getById(this.route.snapshot.params['id']).subscribe((data: User) => {
+      console.log(data);
+      this.userData = data;
+    });
   }
 
   update() {
-    this.user = this.userData;
-    this.service.update(this.user).subscribe((result) => this.router.navigate(['/user/list']));
+    // this.user = this.userData;
+    this.service.update(this.userData).subscribe((result) => this.router.navigate(['/user/list']));
 
 
   }
