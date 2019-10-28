@@ -1,3 +1,10 @@
 <div class="body">
     <app-menu-bar></app-menu-bar>
+    <h1 id="title">Reserver</h1>
+
+    <mat-select placeholder="Choisissez votre ligne" [(ngModel)]="selectedValue" name="item">
+        <mat-option *ngFor="let item of items" [value]="item.value">
+            {{item.viewValue}}
+        </mat-option>
+    </mat-select>
 </div>

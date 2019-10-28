@@ -1,3 +1,12 @@
+#title {
+    position: absolute;
+    margin-top: 1cm;
+    margin-left: 45%;
+    margin-right: auto;
+    font-family: 'Dancing Script';
+    color: white;
+    font-size: 350%;
+}
 .body{
     background-image: url("https://img.fotocommunity.com/ponts-de-lyon-de-nuit-fbc14783-131e-4baa-b513-08517b0b0c09.jpg?height=1080");
     background-repeat: repeat;

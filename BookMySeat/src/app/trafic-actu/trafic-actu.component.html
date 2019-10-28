@@ -1,7 +1,9 @@
 <div class="body">
     <app-menu-bar></app-menu-bar>
+
     <h1 id="title">Le trafic</h1>
-    <table mat-table #table [dataSource]="dataSource">
+    
+    <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z1">
         
         <ng-container matColumnDef="line">
             <th mat-header-cell *matHeaderCellDef> Ligne </th>

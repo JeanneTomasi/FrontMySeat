@@ -1,5 +1,8 @@
 import { Line } from './../../models/line';
 import { Component, OnInit } from '@angular/core';
+import { VehicleService } from 'src/services/vehicle.service';
+import { Vehicle } from 'src/models/vehicle';
+import { Observable } from 'rxjs';
 
 let l1: Line = new Line();
 l1.name = 'l3';
@@ -31,10 +34,12 @@ const LIST_BUS: bus[] = [
 })
 export class MesLignesComponent implements OnInit {
   displayedRows: string[] = ['id_bus', 'line', 'placesLeft', 'reservation'];
-  dataSource = LIST_BUS;
-  constructor() { }
+  dataSource: Observable<Vehicle[]>;
+
+  constructor(private vehicleService: VehicleService) { }
 
   ngOnInit() {
+    this.dataSource = this.vehicleService.findAll();
   }
 
 }
