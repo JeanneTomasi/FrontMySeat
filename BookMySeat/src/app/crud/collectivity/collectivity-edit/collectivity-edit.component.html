@@ -1,16 +1,28 @@
 <div>
-    <h2>Collectivity Edit</h2>
-    <div>
-        <label>Id :
-            <input [(ngModel)]="collectivityData.id_collectivity" placeholder="Numéro d'identification" />
+    <h1>Collectivity Edit</h1>
+    <table>
+        <tr>
+            <td>Id :</td>
+            <td><input [(ngModel)]="collectivityData.id_collectivity" placeholder="Numéro d'identification" /></td>
+        </tr>
+        <tr>
+            <td>Collectivité :</td>
+            <td> <input [(ngModel)]="collectivityData.name" placeholder="Nom de la collectivité" /></td>
+        </tr>
+        <tr>
+            <td>Zone d'opération :</td>
+            <td><input [(ngModel)]="collectivityData.operation_area" placeholder="Zone d'opération" /></td>
+        </tr>
+        <tr>
+            <td><button mat-raised-button color="accent" (click)="update()">Save</button></td>
+        </tr>
+        <label>
+           
         </label><br>
-        <label>Collectivité :
-            <input [(ngModel)]="collectivityData.name" placeholder="Nom de la collectivité" />
+        <label>
+            
         </label><br>
-        <label>Zone d'opération :
-            <input [(ngModel)]="collectivityData.operation_area" placeholder="Zone d'opération" />
-        </label><br>
-    </div>
-    <button mat-raised-button color="accent" (click)="update()">Save</button>
+    </table>
+    
 </div>
 <app-retour></app-retour>
