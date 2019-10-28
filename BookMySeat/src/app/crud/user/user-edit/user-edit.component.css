@@ -1,0 +1,25 @@
+table {
+    border-collapse: collapse;
+    margin: auto
+}
+
+h2{
+    text-align: center;
+    font-family: 'Dancing Script';
+    font-size: 35pt;
+}
+
+button{
+    display: block;
+   margin : auto;
+}
+
+.yolo{
+    margin: auto;
+}
+
+.centrer{
+    width: 70%;
+    display: block;
+    margin : auto;
+}

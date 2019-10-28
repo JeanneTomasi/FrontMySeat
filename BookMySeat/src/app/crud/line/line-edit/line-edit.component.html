@@ -1,26 +1,22 @@
 <div>
-    <h2>Line Edit</h2>
-    <div>
-        <label>Id :
-            <input [(ngModel)]="lineData.id_line" placeholder="Numéro d'identification" />
-        </label><br>
-        <label>Nom :
-            <input [(ngModel)]="lineData.name" placeholder="Nom de la ligne" />
-        </label><br>
-        <label>Localisation :
-            <input [(ngModel)]="lineData.localisation" placeholder="Localisation" />
-        </label><br>
-    </div>
-    <button mat-raised-button color="accent" (click)="update()">Save</button>
-</div>
+    <h1>Line Edit</h1>
 
 <table>
-        <tr>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
+    <tr>
+        <td>Id :</td>
+        <td><input [(ngModel)]="lineData.id_line" placeholder="Numéro d'identification" /></td>
+    </tr>
+    <tr>
+        <td>Nom :</td>
+        <td><input [(ngModel)]="lineData.name" placeholder="Nom de la ligne" /></td>
+    </tr>
+    <tr>
+        <td>Localisation :</td>
+        <td><input [(ngModel)]="lineData.localisation" placeholder="Localisation" /></td>
+    </tr>
+
+        
+
 </table>
+
+<p style="text-align: center;"><button mat-raised-button color="accent" (click)="update()">Save</button></p>

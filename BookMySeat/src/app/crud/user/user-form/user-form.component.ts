@@ -10,12 +10,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
 
-  user = new User();
+  userData = new User();
   // form: FormGroup;
-  @Input() userData = {
-    id_user: 0, name: '', firstName: '', dateDeNaissance: null, num: 0, street: '',
-    city: '', postalCode: 0, country: '', email: '', username: ''
-  };
+  // @Input() userData = {
+  //   id_user: 0, name: '', firstName: '', dateDeNaissance: null, num: 0, street: '',
+  //   city: '', postalCode: 0, country: '', email: '', username: ''
+  // };
 
   constructor(private router: Router, private service: UserService) { }
 
@@ -23,8 +23,8 @@ export class UserFormComponent implements OnInit {
   }
 
   redirect() {
-    this.user = this.userData;
-    this.service.add(this.user).subscribe((result) => this.router.navigate(['/user/list']));
+    // this.user = this.userData;
+    this.service.add(this.userData).subscribe((result) => this.router.navigate(['/user/list']));
 
 
   }

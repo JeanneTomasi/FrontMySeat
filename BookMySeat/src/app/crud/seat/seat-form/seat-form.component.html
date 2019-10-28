@@ -1,27 +1,31 @@
 <div>
-    <h2>Seat Add</h2>
-    <div>
-        <label>Id :
-            <input [(ngModel)]="seatData.id_seat" placeholder="Numéro d'identification" />
-        </label><br>
-        <label>Placement :
-            <input [(ngModel)]="seatData.placement" placeholder="Placement" />
-        </label><br>
-        <label>Réservable :
-            <input type="checkbox" [(ngModel)]="seatData.reservable" value="true">
-        </label><br>
-        <label>isReserved :
-            <input type="checkbox" [(ngModel)]="seatData.isReserved" value="true">
-        </label><br>
-        <!-- <label>Vehicle :
-            <select>
-                <option *ngFor="let v of vehicles" (click)="chargeVehicle(v.id_vehicle)">{{v.immatriculation}}</option>
-            </select></label><br> -->
-        <label>Vehicle :
-            <select [(ngModel)]="seatData.vehicle">
-                <option *ngFor="let v of vehicles" value="{{v}}">{{v.immatriculation}}</option>
-            </select></label><br>
-
+        <h2>Seat Edit</h2>
+    
+    
+    <table>
+        <tr>
+            <td>Id :</td>
+            <td><input [(ngModel)]="seatData.id_seat" placeholder="Numéro d'identification" /></td>
+        </tr>
+        <tr>
+            <td>Placement :</td>
+            <td><input [(ngModel)]="seatData.placement" placeholder="Placement" /></td>
+        </tr>
+        <tr>
+            <td>Réservable :</td>
+            <td><input type="checkbox" [(ngModel)]="seatData.reservable" value="true"></td>
+        </tr>
+        <tr>
+            <td>isReserved :</td>
+            <td><input type="checkbox" [(ngModel)]="seatData.isReserved" value="true"></td>
+        </tr>
+        <tr>
+            <td>Vehicle :</td>
+            <td><select [(ngModel)]="seatData.vehicle">
+                    <option *ngFor="let v of vehicles" [ngValue]="v">{{v.immatriculation}}</option>
+                </select></td>
+        </tr>
+    </table>
+    
+    <p style="text-align: center;"><button mat-raised-button color="accent" (click)="add()">Save</button></p>
     </div>
-    <button mat-raised-button color="accent" (click)="add()">Save</button>
-</div>
