@@ -2,9 +2,20 @@
     <app-menu-bar></app-menu-bar>
     <h1 id="title">Reserver</h1>
 
-    <mat-select placeholder="Choisissez votre ligne" [(ngModel)]="selectedValue" name="item">
-        <mat-option *ngFor="let item of items" [value]="item.value">
-            {{item.viewValue}}
-        </mat-option>
-    </mat-select>
+    <div class="container">
+        <mat-select placeholder="Choisissez votre ligne" [(ngModel)]="lines" name="item">
+            <mat-option *ngFor="let item of lines" [value]="item.name">
+                {{item.name}}
+            </mat-option>
+        </mat-select>
+    </div>
+    <button mat-raised-button color="warn" id="toBus" (click)="toBus()">Choix de vehicule</button>
+
+    <div *ngIf="line.isValid">
+        <mat-select placeholder="Choisissez la station" [(ngModel)]="lines" name="item">
+            <mat-option *ngFor="let item of lines" [value]="item.name">
+                {{item.name}}
+            </mat-option>
+        </mat-select>
+    </div>
 </div>

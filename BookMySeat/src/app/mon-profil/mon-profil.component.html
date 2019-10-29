@@ -1,5 +1,5 @@
+<app-menu-bar></app-menu-bar>
 <div class="body">
-    <app-menu-bar></app-menu-bar>
     <h1 id="title">Mon profil</h1>
 
     <!-- <mat-card>
@@ -27,7 +27,7 @@
     </mat-card> -->
     <div class="centrer">
         <fieldset>
-            <table>
+            <table id="laTable">
                 <tr>
                     <td> <label for="name">Nom* :</label></td>
                     <td><input type="text" class="form-control" [(ngModel)]="userData.name" /></td>
@@ -99,7 +99,7 @@
             </fieldset>
         </fieldset>
 
-        <p style="text-align: center;"><button mat-raised-button color="accent" (click)="update()">Mettre à
+        <p style="text-align: center;"><button id="sub" mat-raised-button color="accent" (click)="update()">Mettre à
                 jour</button></p>
     </div>
 </div>

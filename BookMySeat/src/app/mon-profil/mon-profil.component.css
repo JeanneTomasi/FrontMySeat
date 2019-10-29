@@ -7,7 +7,7 @@
     color: white;
     font-size: 350%;
 }
-mat-card {
+/* mat-card {
     position: absolute;
     margin-top: 15%;
     width: 70%;
@@ -15,30 +15,20 @@ mat-card {
 }
 .content {
     display: inline-flex;
-}
+} */
 .body{
     background-image: url("https://www.bruno-paccard.com/wp-content/uploads/2018/06/bruno-paccard-lyon-confluence-nuit-2.jpg");
     background-repeat: repeat;
     height: 100%;
 }
-table {
+#laTable {
     border-collapse: collapse;
     margin: auto
 }
 
-h2{
-    text-align: center;
-    font-family: 'Dancing Script';
-    font-size: 35pt;
-}
-
-button{
+.sub{
     display: block;
    margin : auto;
-}
-
-.yolo{
-    margin: auto;
 }
 
 .centrer{
@@ -46,7 +36,6 @@ button{
     top: 5cm;
     background-color: ivory;
     width: 70%;
-    display: block;
     margin-right: 15%;
     margin-left: 15%;
 }

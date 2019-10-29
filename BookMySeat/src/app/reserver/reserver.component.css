@@ -7,6 +7,20 @@
     color: white;
     font-size: 350%;
 }
+.container {
+    width: 70%;
+    position: absolute;
+    margin-top: 4cm;
+    margin-left: 15%;
+    background-color: linen;
+}
+#toBus {
+    width: auto;
+    position: absolute;
+    top: 6cm;
+    right: 45%;
+    left: 45%;
+}
 .body{
     background-image: url("https://img.fotocommunity.com/ponts-de-lyon-de-nuit-fbc14783-131e-4baa-b513-08517b0b0c09.jpg?height=1080");
     background-repeat: repeat;
